@@ -37,7 +37,7 @@ function Counters() {
               color="info"
               count={100}
               suffix="+"
-              title="Pages"
+              title="Products"
               // description="Save 3-4 weeks of work when you use our pre-made pages for your website"
             />
           </Grid>
