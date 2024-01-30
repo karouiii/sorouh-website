@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.js": "/sorouh-website/static/js/main.6b3cacb5.js",
+    "static/media/rotating-card-bg-front.jpeg": "/sorouh-website/static/media/rotating-card-bg-front.bdcdfadc0dacb9bc5f23.jpeg",
+    "static/media/rotating-card-bg-back.jpeg": "/sorouh-website/static/media/rotating-card-bg-back.183088de91adb283a9ae.jpeg",
+    "static/media/waves-white.svg": "/sorouh-website/static/media/waves-white.7e7579c6e93ead70064fb4e8dd899f32.svg",
+    "static/media/bg1.jpg": "/sorouh-website/static/media/bg1.a44e46e1c7f7022ebfdc.jpg",
+    "static/media/contact-us.jpg": "/sorouh-website/static/media/contact-us.e94473f01faae7ef87bf.jpg",
+    "static/media/logo-sorouh.jpg": "/sorouh-website/static/media/logo-sorouh.e068de00ebccffe3df59.jpg",
+    "static/media/logo-sorouh-ar.jpg": "/sorouh-website/static/media/logo-sorouh-ar.a68fef6f9a8c95dd0405.jpg",
+    "static/media/about-us-consult.jpg": "/sorouh-website/static/media/about-us-consult.37638b686080a85b5aa9.jpg",
+    "static/media/bg-presentation.jpg": "/sorouh-website/static/media/bg-presentation.4c52c199af1a52805470.jpg",
+    "static/media/about-us-our-vision.jpg": "/sorouh-website/static/media/about-us-our-vision.1afff206719fa68c829c.jpg",
+    "static/media/about-us-marketing.jpg": "/sorouh-website/static/media/about-us-marketing.f8491c2f6c3e4f6b7b23.jpg",
+    "static/media/bg-page.jpg": "/sorouh-website/static/media/bg-page.20f552023c06c7ea0733.jpg",
+    "static/media/logo-pinterest.svg": "/sorouh-website/static/media/logo-pinterest.844709031a3c1266979e933c371e043a.svg",
+    "static/media/logo-vodafone.svg": "/sorouh-website/static/media/logo-vodafone.b3e8486c0cac220bc3a31c9eab049b21.svg",
+    "static/media/logo-spotify.svg": "/sorouh-website/static/media/logo-spotify.7e255dc67938d13ff97cc8f16812d325.svg",
+    "static/media/logo-coinbase.svg": "/sorouh-website/static/media/logo-coinbase.87e91c7f318f2d82f46e78469976128b.svg",
+    "static/media/logo-nasa.svg": "/sorouh-website/static/media/logo-nasa.c5d11f8820bfde5fd64db0074156e06c.svg",
+    "static/media/logo-netflix.svg": "/sorouh-website/static/media/logo-netflix.432ed6b5c31b9bcab9a38e32bf46a1e9.svg",
+    "index.html": "/sorouh-website/index.html",
+    "main.6b3cacb5.js.map": "/sorouh-website/static/js/main.6b3cacb5.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.6b3cacb5.js"
+  ]
+}
