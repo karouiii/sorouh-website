@@ -1,23 +1,12 @@
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React from "react";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 function ProductCard({ image, name, description }) {
-  const [showPopup, setShowPopup] = useState(false);
-
-  const handleCardClick = () => {
-    setShowPopup(true);
-  };
-
-  const closePopup = () => {
-    setShowPopup(false);
-  };
-
   const imageTemplate = (
     <MKBox
-      onClick={handleCardClick}
       bgColor="white"
       borderRadius="xl"
       shadow="lg"
@@ -50,38 +39,6 @@ function ProductCard({ image, name, description }) {
           </MKTypography>
         )}
       </MKBox>
-
-      {showPopup && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 999,
-          }}
-          onClick={closePopup}
-        >
-          <div
-            style={{
-              backgroundColor: "white",
-              padding: "20px",
-              borderRadius: "8px",
-              maxWidth: "400px",
-              textAlign: "center",
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <h2>{name}</h2>
-            <p>{description}</p>
-          </div>
-        </div>
-      )}
     </MKBox>
   );
 }

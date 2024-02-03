@@ -9,7 +9,7 @@ import MKTypography from "components/MKTypography";
 
 function DefaultCounterCard({ color, count, title, description, ...rest }) {
   return (
-    <MKBox p={2} textAlign="center" lineHeight={1}>
+    <MKBox p={1} textAlign="center" lineHeight={1}>
       <MKTypography variant="h1" color={color} textGradient>
         <CountUp end={count} duration={1} {...rest} />
       </MKTypography>

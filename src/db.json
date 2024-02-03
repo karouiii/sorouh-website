@@ -1,0 +1,58 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Acoustic system",
+      "items": [
+        {
+          "id": 1,
+          "name": "ACOUSTIBOND",
+          "description": "A water-resistant, acrylic/rubber crumb, ceramic, porcelain and stone tile adhesive with soundproofing properties.",
+          "image": "/products-acoustic-system/acoustibond.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Product 2",
+          "description": "Description for Product 2",
+          "image": "/products-acoustic-system/acoustibond.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Category 2",
+      "items": [
+        {
+          "id": 3,
+          "name": "Product 3",
+          "description": "Description for Product 3",
+          "image": "/products-acoustic-system/acoustibond.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Product 4",
+          "description": "Description for Product 4",
+          "image": "/products-acoustic-system/acoustibond.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Category 3",
+      "items": [
+        {
+          "id": 1,
+          "name": "test 12",
+          "description": "this product is amazing",
+          "image": "/products-acoustic-system/acoustibond.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Product 987",
+          "description": "Description for Product 987",
+          "image": "/products-acoustic-system/acoustibond.jpg"
+        }
+      ]
+    }
+  ]
+}

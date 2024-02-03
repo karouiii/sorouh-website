@@ -45,6 +45,8 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
       pt={3.5}
       pb={3}
       px={3}
+      borderWidth={1}
+      border="2px solid #a37913"
     >
       <MKTypography
         display="block"
@@ -70,6 +72,7 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
           variant="body2"
           color={variant === "contained" || color === "light" ? "text" : "white"}
           mb={2}
+          sx={{ overflow: "auto", maxHeight: "200px" }}
         >
           {description}
         </MKTypography>

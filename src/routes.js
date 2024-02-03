@@ -34,7 +34,7 @@ import AboutUs from "layouts/pages/landing-pages/about-us";
 // import ProgressBars from "layouts/sections/elements/progress-bars";
 // import Toggles from "layouts/sections/elements/toggles";
 // import Typography from "layouts/sections/elements/typography";
-// import Products from "pages/LandingPages/Products";
+import ProductsList from "pages/LandingPages/ProductsList";
 import ContactUs from "pages/LandingPages/ContactUs";
 
 const routes = [
@@ -456,11 +456,11 @@ const routes = [
   //   route: "/pages/landing-pages/author",
   //   component: <Author />,
   // },
-  // {
-  //   name: "Products",
-  //   route: "/pages/landing-pages/products",
-  //   component: <Products />,
-  // },
+  {
+    name: "Products",
+    route: "/pages/landing-pages/products-list",
+    component: <ProductsList />,
+  },
   {
     name: "Contact us",
     route: "/pages/landing-pages/contact-us",

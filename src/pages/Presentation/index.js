@@ -14,7 +14,7 @@ import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 // Presentation page sections
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
-// import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
+import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
 // import Pages from "pages/Presentation/sections/Pages";
 import Testimonials from "pages/Presentation/sections/Testimonials";
 import Download from "pages/Presentation/sections/Download";
@@ -50,8 +50,9 @@ function Presentation() {
         <Container>
           <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
             <MKTypography
-              variant="h2"
-              color="black"
+              variant="h1"
+              color="white"
+              opacity={0.8}
               mt={-6}
               mb={1}
               sx={({ breakpoints, typography: { size } }) => ({
@@ -64,7 +65,8 @@ function Presentation() {
             </MKTypography>
             <MKTypography
               variant="body1"
-              color="black"
+              color="white"
+              opacity={0.8}
               textAlign="center"
               px={{ xs: 6, lg: 12 }}
               mt={1}
@@ -88,7 +90,7 @@ function Presentation() {
       >
         <Counters />
         <Information />
-        {/* <DesignBlocks /> */}
+        <DesignBlocks />
         {/* <Container sx={{ mt: 6 }}>
           <BuiltByDevelopers />
         </Container> */}
@@ -103,7 +105,7 @@ function Presentation() {
                 description="Check the possible ways of working with our product."
                 action={{
                   type: "internal",
-                  route: "/pages/landing-pages/products",
+                  route: "/pages/landing-pages/products-list",
                   label: "Discover more",
                 }}
               />

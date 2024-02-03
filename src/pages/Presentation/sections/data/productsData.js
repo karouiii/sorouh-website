@@ -22,6 +22,16 @@ export default [
         description: "A selection of 45 page sections that fit perfectly in any combination",
         name: "Pricing",
       },
+      {
+        image: quickfuga,
+        description: "A selection of 45 page sections that fit perfectly in any combination",
+        name: "Pricing",
+      },
+      {
+        image: quickfuga,
+        description: "A selection of 45 page sections that fit perfectly in any combination",
+        name: "Pricing",
+      },
     ],
   },
   {

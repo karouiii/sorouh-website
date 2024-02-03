@@ -1,8 +1,8 @@
-// react-router-dom components
-// import { Link } from "react-router-dom";
-
 // @mui material components
 import React, { useState } from "react";
+import MKPagination from "components/MKPagination";
+import Icon from "@mui/material/Icon";
+import Container from "@mui/material/Container";
 import {
   Grid,
   Paper,
@@ -12,10 +12,6 @@ import {
   Typography,
   Divider,
 } from "@mui/material";
-
-// import MKBox from "components/MKBox";
-// import MKBadge from "components/MKBadge";
-// import MKTypography from "components/MKTypography";
 
 // Presentation page components
 import ProductCard from "../components/ProductCard";
@@ -90,7 +86,7 @@ const ProductsBlock = () => {
                   <Typography variant="h5" style={{ marginBottom: "8px" }}>
                     {category.category}
                   </Typography>
-                  <Divider sx={{ borderColor: "#007bff", borderWidth: 2, margin: "8px 0" }} />
+                  <Divider sx={{ borderColor: "#191919", borderWidth: 2, margin: "8px 0" }} />
                 </Grid>
                 {category.items.map((item) => (
                   <Grid key={item.name} item xs={12} sm={6} md={4} lg={3}>
@@ -98,62 +94,36 @@ const ProductsBlock = () => {
                   </Grid>
                 ))}
                 {index < filteredProducts.length - 1 && (
-                  <Divider sx={{ borderColor: "#007bff", borderWidth: 2, margin: "8px 0" }} />
+                  <Divider sx={{ borderColor: "#191919", borderWidth: 2, margin: "8px 0" }} />
                 )}{" "}
                 {/* Add divider if not the last category */}
               </React.Fragment>
             ))}
           </Grid>
+          <Divider sx={{ borderColor: "#191919", borderWidth: 2, margin: "8px 0" }} />
+          <Container sx={{ height: "100%" }}>
+            <Grid container item justifyContent="center" xs={12} lg={6} mx="auto" height="100%">
+              <MKPagination>
+                <MKPagination item>
+                  <Icon>keyboard_arrow_left</Icon>
+                </MKPagination>
+                <MKPagination item active>
+                  1
+                </MKPagination>
+                <MKPagination item>2</MKPagination>
+                <MKPagination item>3</MKPagination>
+                <MKPagination item>4</MKPagination>
+                <MKPagination item>5</MKPagination>
+                <MKPagination item>
+                  <Icon>keyboard_arrow_right</Icon>
+                </MKPagination>
+              </MKPagination>
+            </Grid>
+          </Container>
         </Paper>
       </Grid>
     </Grid>
   );
 };
-
-// const renderData = data.map(({ category, items }) => (
-// <Grid container spacing={3} sx={{ mb: 10 }} key={category}>
-//   <Grid item xs={12} lg={3}>
-//     <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
-//       <MKTypography variant="h3" fontWeight="bold" mb={1}>
-//         {category}
-//       </MKTypography>
-//     </MKBox>
-//   </Grid>
-//   <Grid item xs={12} lg={9}>
-//     <Grid container spacing={3}>
-//       {items.map(({ image, description, name }) => (
-//         <Grid item xs={12} md={4} sx={{ mb: 2 }} key={name}>
-//           <ProductCard image={image} name={name} description={description} />
-//         </Grid>
-//       ))}
-//     </Grid>
-//   </Grid>
-// </Grid>
-// ));
-
-// return (
-//   <MKBox component="section" my={6} py={6}>
-//     <Container>
-//       <Grid
-//         container
-//         item
-//         xs={12}
-//         lg={6}
-//         flexDirection="column"
-//         alignItems="center"
-//         sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
-//       >
-//         <MKTypography variant="h2" fontWeight="bold">
-//           Huge collection of products
-//         </MKTypography>
-//         <MKTypography variant="body1" color="text">
-//           We have created multiple options for you to put together and customise into pixel
-//           perfect pages.
-//         </MKTypography>
-//       </Grid>
-//     </Container>
-//     <Container sx={{ mt: 6 }}>{renderData}</Container>
-//   </MKBox>
-// );
 
 export default ProductsBlock;

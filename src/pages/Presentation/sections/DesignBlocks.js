@@ -14,16 +14,36 @@ import ExampleCard from "pages/Presentation/components/ExampleCard";
 
 // Data
 import data from "pages/Presentation/sections/data/designBlocksData";
+import bgLogoAr from "assets/images/logo-sorouh-ar.jpg";
 
 function DesignBlocks() {
   const renderData = data.map(({ title, description, items }) => (
     <Grid container spacing={3} sx={{ mb: 10 }} key={title}>
       <Grid item xs={12} lg={3}>
-        <MKBox position="sticky" top="100px" pb={{ xs: 2, lg: 6 }}>
-          <MKTypography variant="h3" fontWeight="bold" mb={1}>
+        <MKBox
+          position="sticky"
+          top="100px"
+          pb={{ xs: 2, lg: 6 }}
+          border="2px solid #a37913"
+          borderRadius="xl"
+          px={3}
+          pt={3.5}
+          bgColor="white"
+          sx={{
+            backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+              `${linearGradient(
+                rgba(gradients.dark.main, 0.8),
+                rgba(gradients.dark.state, 0.8)
+              )}, url(${bgLogoAr})`,
+            backgroundSize: "contain",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <MKTypography variant="h3" fontWeight="bold" mb={1} color="warning">
             {title}
           </MKTypography>
-          <MKTypography variant="body2" fontWeight="regular" color="secondary" mb={1} pr={2}>
+          <MKTypography variant="body2" fontWeight="regular" color="light" mb={1} pr={2}>
             {description}
           </MKTypography>
         </MKBox>

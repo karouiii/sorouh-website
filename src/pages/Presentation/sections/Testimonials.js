@@ -32,8 +32,7 @@ function Information() {
             52 Company
           </MKTypography>
           <MKTypography variant="body1" color="text" mb={2}>
-            Many Fortune 500 companies, startups, universities and governmental institutions love
-            Creative Tim&apos;s products.
+            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 8 }}>
@@ -49,7 +48,7 @@ function Information() {
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
-              color="info"
+              color="light"
               variant="gradient"
               name="Shailesh Kushwaha"
               date="1 week ago"
@@ -59,7 +58,7 @@ function Information() {
           </Grid>
           <Grid item xs={12} md={6} lg={4}>
             <DefaultReviewCard
-              color="warning"
+              color="light"
               variant="gradient"
               name="Samuel Kamuli"
               date="3 weeks ago"

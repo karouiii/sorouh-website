@@ -3,8 +3,9 @@ const imagesPrefix =
 
 export default [
   {
-    title: "Design Blocks",
-    description: "A selection of 45 page sections that fit perfectly in any combination",
+    title: "ACOUSTIC SYSTEMS",
+    description:
+      "Save time and cost soundproofing concrete floors in multilevel buildings using high-quality Australian developed and made matt/adhesive to bond ceramic tiles internally/externally on balconies and wet areas.",
     items: [
       {
         image: `${imagesPrefix}/headers.jpg`,
