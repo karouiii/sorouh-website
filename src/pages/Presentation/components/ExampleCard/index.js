@@ -3,17 +3,19 @@ import PropTypes from "prop-types";
 
 // @mui material components
 import Tooltip from "@mui/material/Tooltip";
+import { Chip } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-function ExampleCard({ image, name, count, pro, ...rest }) {
+function ExampleCard({ image, name, itemDescription, count, pro, ...rest }) {
   const imageTemplate = (
     <MKBox
       bgColor="white"
       borderRadius="xl"
       shadow="lg"
-      minHeight="10rem"
+      minHeight="2rem"
       sx={{
         overflow: "hidden",
         transform: "perspective(999px) rotateX(0deg) translate3d(0, 0, 0)",
@@ -72,18 +74,33 @@ function ExampleCard({ image, name, count, pro, ...rest }) {
       ) : (
         imageTemplate
       )}
-      {name || count > 0 ? (
+      {name || itemDescription || count > 0 ? (
         <MKBox mt={1} ml={1} lineHeight={1}>
           {name && (
-            <MKTypography variant="h6" fontWeight="bold">
+            <MKTypography variant="h4" fontWeight="bold">
               {name}
             </MKTypography>
           )}
-          {count > 0 && (
-            <MKTypography variant="button" fontWeight="regular" color="secondary">
-              {count} {count === 1 ? "Example" : "Examples"}
+          {itemDescription && (
+            <MKTypography
+              variant="h6"
+              color="black"
+              sx={{
+                overflowY: "auto",
+                maxHeight: "55px",
+                "&::-webkit-scrollbar": {
+                  width: "12px",
+                },
+                "&::-webkit-scrollbar-thumb": {
+                  backgroundColor: "#a37913", // Remplacez par la couleur souhaitée
+                  borderRadius: "6px",
+                },
+              }}
+            >
+              {itemDescription}
             </MKTypography>
           )}
+          {count > 0 && <Chip icon={<ShoppingCartIcon />} label="Available" color="success" />}
         </MKBox>
       ) : null}
     </MKBox>
@@ -101,6 +118,7 @@ ExampleCard.defaultProps = {
 ExampleCard.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string,
+  itemDescription: PropTypes.string,
   count: PropTypes.number,
   pro: PropTypes.bool,
 };

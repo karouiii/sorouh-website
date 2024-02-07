@@ -41,7 +41,7 @@ export default {
       items: [
         { name: "about us", route: "/pages/landing-pages/about-us" },
         { name: "contact us", route: "/pages/landing-pages/contact-us" },
-        { name: "products", route: "/pages/landing-pages/products" },
+        { name: "products", route: "/pages/landing-pages/products-list" },
       ],
     },
     {

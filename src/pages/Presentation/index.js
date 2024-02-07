@@ -1,3 +1,6 @@
+// import { CCarousel, CCarouselItem, CImage, CCarouselCaption } from "@coreui/react";
+import "@coreui/coreui/dist/css/coreui.min.css";
+
 // @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
@@ -28,6 +31,9 @@ import footerRoutes from "footer.routes";
 
 // Images
 import bgImage from "assets/images/bg-presentation.jpg";
+// import carousel1 from "assets/images/products/product-1-min.jpg";
+// import carousel2 from "assets/images/products/product-2-min.jpg";
+// import carousel3 from "assets/images/products/product-3-min.jpg";
 import bgPage from "assets/images/bg-page.jpg";
 // import bgLogoEn from "assets/images/logo-sorouh.jpg";
 import bgLogoAr from "assets/images/logo-sorouh-ar.jpg";
@@ -40,9 +46,13 @@ function Presentation() {
         minHeight="75vh"
         width="100%"
         sx={{
-          backgroundImage: `url(${bgImage})`,
+          backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
+            `${linearGradient(
+              rgba(gradients.dark.main, 0.1),
+              rgba(gradients.dark.state, 0.1)
+            )}, url(${bgImage})`,
           backgroundSize: "cover",
-          backgroundPosition: "top",
+          backgroundPosition: "center",
           display: "grid",
           placeItems: "center",
         }}
