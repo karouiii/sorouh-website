@@ -36,7 +36,7 @@ import bgImage from "assets/images/bg-presentation.jpg";
 // import carousel3 from "assets/images/products/product-3-min.jpg";
 import bgPage from "assets/images/bg-page.jpg";
 // import bgLogoEn from "assets/images/logo-sorouh.jpg";
-import bgLogoAr from "assets/images/logo-sorouh-ar.jpg";
+// import bgLogoAr from "assets/images/logo-sorouh-ar.jpg";
 
 function Presentation() {
   return (
@@ -92,7 +92,7 @@ function Presentation() {
           mx: { xs: 2, lg: 3 },
           mt: -8,
           mb: 4,
-          backgroundImage: `url(${bgPage}), url(${bgLogoAr})`,
+          backgroundImage: `url(${bgPage})`,
           // backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba(white.main, 0.8),
           // backdropFilter: "saturate(200%) blur(30px)",
           // boxShadow: ({ boxShadows: { xxl } }) => xxl,

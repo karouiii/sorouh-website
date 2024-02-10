@@ -1,12 +1,13 @@
 import Card from "@mui/material/Card";
 // import Icon from "@mui/material/Icon";
 import Container from "@mui/material/Container";
-// import Grid from "@mui/material/Grid";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 import MKBox from "components/MKBox";
-import MKPagination from "components/MKPagination";
+// import MKPagination from "components/MKPagination";
 import MKTypography from "components/MKTypography";
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
 import {
@@ -17,6 +18,8 @@ import {
   ToggleButtonGroup,
   Typography,
   Divider,
+  Modal,
+  Box,
 } from "@mui/material";
 
 // Routes
@@ -26,24 +29,35 @@ import footerRoutes from "footer.routes";
 //Images
 import bgImage from "assets/images/bg-products.jpg";
 
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
+// import axios from "axios";
+
+//data
+import data from "pages/Presentation/sections/data/productsData";
+
+const styleModal = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 400,
+  bgcolor: "background.paper",
+  border: "2px solid #a37913",
+  borderRadius: "1.25rem",
+  boxShadow: 24,
+  p: 4,
+};
 
 const ProductList = () => {
-  const [data, setData] = useState([]);
+  const [open, setOpen] = React.useState(false);
+  const [selectedItem, setSelectedItem] = React.useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("http://localhost:3001/categories");
-        setData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const handleClose = () => setOpen(false);
 
-    fetchData();
-  }, []);
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+    setOpen(true);
+  };
 
   const [categoryFilter, setCategoryFilter] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -72,6 +86,17 @@ const ProductList = () => {
     setSearchQuery(event.target.value);
   };
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const categoriesPerPage = 4;
+  const totalCategories = filteredProducts.length;
+  const lastCategoryIndex = currentPage * categoriesPerPage;
+  const firstCategoryIndex = lastCategoryIndex - categoriesPerPage;
+  const currentCategories = filteredProducts.slice(firstCategoryIndex, lastCategoryIndex);
+
+  const handlePageChange = (event, value) => {
+    setCurrentPage(value);
+  };
+
   const imageTemplate = (item) => (
     <MKBox
       bgColor="white"
@@ -91,7 +116,7 @@ const ProductList = () => {
         },
       }}
     >
-      <MKBox component="img" src={process.env.PUBLIC_URL + item.image} width="100%" my="auto" />
+      <MKBox component="img" src={item.image} width="100%" my="auto" />
     </MKBox>
   );
 
@@ -131,9 +156,11 @@ const ProductList = () => {
           {/* Filter by category */}
           <Grid item xs={12} sm={3}>
             <Paper elevation={3} style={{ padding: "16px", marginBottom: "16px" }}>
-              <Typography variant="h6">Filter by Category</Typography>
+              <MKTypography color="warning" variant="h6">
+                Filter by Category
+              </MKTypography>
               <ToggleButtonGroup
-                color="info"
+                color="warning"
                 fullWidth={true}
                 orientation="vertical"
                 value={categoryFilter}
@@ -142,7 +169,16 @@ const ProductList = () => {
               >
                 {data.map((category) => (
                   <ToggleButton key={category.id} value={category.name}>
-                    {category.name}
+                    <MKTypography
+                      variant="text"
+                      color="black"
+                      fontWeight="bold"
+                      mb={1}
+                      pr={2}
+                      sx={{ textAlign: "center" }}
+                    >
+                      {category.name}
+                    </MKTypography>
                   </ToggleButton>
                 ))}
               </ToggleButtonGroup>
@@ -154,6 +190,7 @@ const ProductList = () => {
               {/* Search filter */}
               <TextField
                 label="Search by Name"
+                type="search"
                 variant="outlined"
                 fullWidth
                 value={searchQuery}
@@ -162,8 +199,8 @@ const ProductList = () => {
               />
               {/* Products display */}
               <Grid container spacing={2}>
-                {filteredProducts.map((category) => (
-                  <React.Fragment key={category.id}>
+                {currentCategories.map((category) => (
+                  <React.Fragment key={category.category}>
                     <Grid item xs={12}>
                       <Typography variant="h5" style={{ marginBottom: "8px" }}>
                         {category.name}
@@ -172,7 +209,7 @@ const ProductList = () => {
                     </Grid>
                     {category.items.map((item) => (
                       <Grid key={item.name} item xs={12} sm={6} md={4} lg={3}>
-                        <MKBox position="relative">
+                        <MKBox position="relative" onClick={() => handleItemClick(item)}>
                           {imageTemplate(item)}
                           <MKBox mt={1} ml={1} lineHeight={1}>
                             {item.name && (
@@ -184,31 +221,40 @@ const ProductList = () => {
                         </MKBox>
                       </Grid>
                     ))}
-                    {category.id < filteredProducts.length - 1 && (
+                    {category.id < currentCategories.length - 1 && (
                       <Divider sx={{ borderColor: "#191919", borderWidth: 2, margin: "8px 0" }} />
                     )}{" "}
                     {/* Add divider if not the last category */}
                   </React.Fragment>
                 ))}
+
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby="modal-modal-title"
+                  aria-describedby="modal-modal-description"
+                >
+                  <Box sx={styleModal}>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                      {selectedItem && selectedItem.name}
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                      {selectedItem && selectedItem.description}
+                    </Typography>
+                  </Box>
+                </Modal>
               </Grid>
               <Divider sx={{ borderColor: "#191919", borderWidth: 2, margin: "8px 0" }} />
               <Container sx={{ height: "100%" }}>
                 <Grid container item justifyContent="center" xs={12} lg={6} mx="auto" height="100%">
-                  <MKPagination>
-                    <MKPagination item>
-                      <Icon>keyboard_arrow_left</Icon>
-                    </MKPagination>
-                    <MKPagination item active>
-                      1
-                    </MKPagination>
-                    <MKPagination item>2</MKPagination>
-                    <MKPagination item>3</MKPagination>
-                    <MKPagination item>4</MKPagination>
-                    <MKPagination item>5</MKPagination>
-                    <MKPagination item>
-                      <Icon>keyboard_arrow_right</Icon>
-                    </MKPagination>
-                  </MKPagination>
+                  <Stack spacing={2} sx={{ justifyContent: "center", marginTop: 2 }}>
+                    <Pagination
+                      count={Math.ceil(totalCategories / categoriesPerPage)}
+                      page={currentPage}
+                      onChange={handlePageChange}
+                      color="warning"
+                    />
+                  </Stack>
                 </Grid>
               </Container>
             </Paper>

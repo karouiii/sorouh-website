@@ -34,6 +34,10 @@ import webermixPratico from "../../../../assets/images/Plasters-mortars-lime-pro
 import webersanEvobarriera from "../../../../assets/images/Plaster-skim-coats-finishes-products/webersan-evobarriera.png";
 import webersanEvocalce from "../../../../assets/images/Plaster-skim-coats-finishes-products/webersan-evocalce.png";
 
+// Mortars for concrete restoration, consolidation and reinforcement of structures Images
+import webertecCLSfluido from "../../../../assets/images/Mortars-for-concrete-restoration-products/webertec-CLSfluido.png";
+import webertecFer from "../../../../assets/images/Mortars-for-concrete-restoration-products/webertec-fer.png";
+
 import flexibleSealer from "../../../../assets/images/products-dumpproofing-waterproofing/Flexible-Sealer.jpg";
 
 export default [
@@ -343,6 +347,28 @@ export default [
         name: "webersan evocalce",
         itemDescription:
           "Renovation plaster based on NHL natural hydraulic lime. Premixed plaster for dehumidification of masonry affected by rising damp, suitable for exterior, interior and basement use.",
+        count: 20,
+        route: "/pages/landing-pages/products-list",
+      },
+    ],
+  },
+  {
+    title: "Mortars for concrete restoration, consolidation and reinforcement of structures",
+    description:
+      "This section focuses on products for repairing concrete, strengthening masonry and reinforced concrete structures, with proven effectiveness. Balconies and terraces are crucial for facade aesthetics but are vulnerable to damage from external factors like moisture, acid rain, and freeze-thaw cycles. Carbon dioxide in the air further corrodes them through carbonation, leading to reinforcement corrosion and aesthetic damage. Proper maintenance, including waterproofing solutions, is essential for preserving your balcony or terrace.",
+    items: [
+      {
+        image: webertecCLSfluido,
+        name: "webertec CLSfluido",
+        itemDescription:
+          "Pourable anti-shrinkage superfluid mortar for structural concrete restoration and grouting.",
+        count: 20,
+        route: "/pages/landing-pages/products-list",
+      },
+      {
+        image: webertecFer,
+        name: "webertec fer",
+        itemDescription: "Protective slurry for concrete and reinforcing bars",
         count: 20,
         route: "/pages/landing-pages/products-list",
       },

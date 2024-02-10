@@ -15,7 +15,7 @@ function Counters() {
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
               count={70}
-              color="info"
+              color="warning"
               // suffix="+"
               title="Clients"
               // description="From buttons, to inputs, navbars, alerts or cards, you are covered"
@@ -26,7 +26,7 @@ function Counters() {
             <DefaultCounterCard
               count={15}
               // suffix="+"
-              color="info"
+              color="warning"
               title="Countries"
               // description="Mix the sections, change the colors and unleash your creativity"
             />
@@ -34,7 +34,7 @@ function Counters() {
           </Grid>
           <Grid item xs={12} md={4}>
             <DefaultCounterCard
-              color="info"
+              color="warning"
               count={100}
               suffix="+"
               title="Products"

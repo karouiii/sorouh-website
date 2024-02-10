@@ -17,14 +17,15 @@ import MuiLink from "@mui/material/Link";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
+import MKAvatar from "components/MKAvatar";
 // import MKButton from "components/MKButton";
 
-// Material Kit 2 React example components
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMobile";
 
-// Material Kit 2 React base styles
 import breakpoints from "assets/theme/base/breakpoints";
+
+import bgLogoEn from "assets/images/logo-sorouh.jpg";
 
 function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
@@ -452,6 +453,9 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
         })}
       >
         <MKBox display="flex" justifyContent="space-between" alignItems="center">
+          <MKBox textAlign="center" component={Link} to="/">
+            <MKAvatar src={bgLogoEn} alt="logo" size="lg" shadow="xl" />
+          </MKBox>
           <MKBox
             component={Link}
             to="/"
