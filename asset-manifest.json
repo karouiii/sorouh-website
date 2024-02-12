@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sorouh-website/static/css/main.7f58dc78.css",
-    "main.js": "/sorouh-website/static/js/main.2a76093c.js",
+    "main.js": "/sorouh-website/static/js/main.59847a46.js",
     "static/media/rotating-card-bg-front.jpeg": "/sorouh-website/static/media/rotating-card-bg-front.bdcdfadc0dacb9bc5f23.jpeg",
     "static/media/webercol-ProGres-Top-S1.png": "/sorouh-website/static/media/webercol-ProGres-Top-S1.cfa6fe397da2afeb726f.png",
     "static/media/weberdry-elasto2.png": "/sorouh-website/static/media/weberdry-elasto2.4673f60784368ab1a84f.png",
@@ -74,10 +74,10 @@
     "static/media/weber-saint-gobain.svg": "/sorouh-website/static/media/weber-saint-gobain.362ce282bc73239c1a8235ad826618dd.svg",
     "index.html": "/sorouh-website/index.html",
     "main.7f58dc78.css.map": "/sorouh-website/static/css/main.7f58dc78.css.map",
-    "main.2a76093c.js.map": "/sorouh-website/static/js/main.2a76093c.js.map"
+    "main.59847a46.js.map": "/sorouh-website/static/js/main.59847a46.js.map"
   },
   "entrypoints": [
     "static/css/main.7f58dc78.css",
-    "static/js/main.2a76093c.js"
+    "static/js/main.59847a46.js"
   ]
 }
