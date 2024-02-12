@@ -10,15 +10,12 @@ import MKTypography from "components/MKTypography";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import CenteredFooter from "examples/Footers/CenteredFooter";
 
-// import DefaultFooter from "examples/Footers/DefaultFooter";
-
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // About Us page sections
 import Information from "pages/LandingPages/AboutUs/sections/Information";
-// import Team from "pages/LandingPages/AboutUs/sections/Team";
 import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
-// import Newsletter from "pages/LandingPages/AboutUs/sections/Newsletter";
+import Download from "pages/Presentation/sections/Download";
 
 // Routes
 import routes from "routes";
@@ -68,7 +65,7 @@ function AboutUs() {
               About Us
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              We&apos; provide fast solutions and unique technologies in high quality.
+              We provide fast solutions and unique technologies in high quality.
             </MKTypography>
             <MKTypography variant="h6" color="white" mt={8} mb={1}>
               Find us on
@@ -79,11 +76,11 @@ function AboutUs() {
                 variant="body1"
                 color="white"
                 href="https://www.facebook.com/sorouh.chimecals"
-                mr={3}
+                // mr={3}
               >
                 <i className="fab fa-facebook" />
               </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
+              {/* <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
                 <i className="fab fa-instagram" />
               </MKTypography>
               <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
@@ -91,7 +88,7 @@ function AboutUs() {
               </MKTypography>
               <MKTypography component="a" variant="body1" color="white" href="#">
                 <i className="fab fa-google-plus" />
-              </MKTypography>
+              </MKTypography> */}
             </MKBox>
           </Grid>
         </Container>
@@ -185,6 +182,7 @@ function AboutUs() {
             </Grid>
           </Grid>
         </Container>
+        <Download />
         <Information />
         {/* <Team /> */}
         <Featuring />

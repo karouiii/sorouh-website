@@ -1,10 +1,8 @@
-// prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
 // react-router-dom components
 import { Link } from "react-router-dom";
 
-// @mui material components
 import Collapse from "@mui/material/Collapse";
 import Icon from "@mui/material/Icon";
 
@@ -20,6 +18,7 @@ function DefaultNavbarDropdown({
   href,
   route,
   collapse,
+  isSelected,
   ...rest
 }) {
   const linkComponent = {
@@ -44,7 +43,11 @@ function DefaultNavbarDropdown({
         alignItems="baseline"
         color={light ? "white" : "dark"}
         opacity={light ? 1 : 0.6}
-        sx={{ cursor: "pointer", userSelect: "none" }}
+        sx={{
+          cursor: "pointer",
+          userSelect: "none",
+          backgroundColor: isSelected ? "#f0f0f0" : "transparent",
+        }}
         {...(route && routeComponent)}
         {...(href && linkComponent)}
       >
@@ -99,6 +102,7 @@ DefaultNavbarDropdown.propTypes = {
   href: PropTypes.string,
   route: PropTypes.string,
   collapse: PropTypes.bool.isRequired,
+  isSelected: PropTypes.bool,
 };
 
 export default DefaultNavbarDropdown;

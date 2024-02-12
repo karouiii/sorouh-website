@@ -3,6 +3,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneIcon from "@mui/icons-material/Phone";
+import FaxIcon from "@mui/icons-material/Fax";
 
 import MKTypography from "components/MKTypography";
 
@@ -45,28 +48,28 @@ export default {
       ],
     },
     {
-      name: "solutions",
+      name: "activities",
       items: [
-        { name: "Consulting services", href: "#" },
-        { name: "Marketing", href: "#" },
-        { name: "OIL, GAS AND PETROCHEMICALS", href: "#" },
-        { name: "Construction", href: "#" },
-        { name: "INDUSTRIAL SECTOR", href: "#" },
+        { name: "Plasters Mortars Lime", route: "/pages/landing-pages/products-list" },
+        {
+          name: "Plaster Skim Coats Finishes For Rehabilitation",
+          route: "/pages/landing-pages/products-list",
+        },
+        { name: "Underlays Glues Sealants", route: "/pages/landing-pages/products-list" },
+        { name: "Waterproofing Solutions", route: "/pages/landing-pages/products-list" },
+        { name: "Laying Tiles", route: "/pages/landing-pages/products-list" },
+        {
+          name: "Restoration, Consolidation And Reinforcement Mortars",
+          route: "/pages/landing-pages/products-list",
+        },
       ],
     },
     {
       name: "Sorouh Chemicals Co.",
       items: [
-        { name: "Abdullah Bin Masoud St., Bin Achour, Tripoli - Libya" },
-        { name: "Tel.: +218217299145" },
-        { name: "F.: +218213508663" },
-      ],
-    },
-    {
-      name: "legal",
-      items: [
-        { name: "terms & conditions", href: "#" },
-        { name: "privacy policy", href: "#" },
+        { icon: <LocationOnIcon />, name: "Abdullah Bin Masoud St., Bin Achour, Tripoli - Libya" },
+        { icon: <PhoneIcon />, name: "Tel.: +218217299145" },
+        { icon: <FaxIcon />, name: "F.: +218213508663" },
       ],
     },
   ],

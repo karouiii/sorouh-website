@@ -72,7 +72,17 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
           variant="body2"
           color={variant === "contained" || color === "light" ? "text" : "white"}
           mb={2}
-          sx={{ overflow: "auto", maxHeight: "200px" }}
+          sx={{
+            overflowY: "auto",
+            maxHeight: "200px",
+            "&::-webkit-scrollbar": {
+              width: "6px",
+            },
+            "&::-webkit-scrollbar-thumb": {
+              backgroundColor: "#a37913", // Remplacez par la couleur souhaitée
+              borderRadius: "6px",
+            },
+          }}
         >
           {description}
         </MKTypography>

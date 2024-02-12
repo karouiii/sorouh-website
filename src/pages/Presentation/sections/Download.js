@@ -1,4 +1,4 @@
-// @mui material components
+import { Link } from "react-router-dom";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 // import Tooltip from "@mui/material/Tooltip";
@@ -12,7 +12,7 @@ import bgImage from "assets/images/shapes/waves-white.svg";
 
 function Download() {
   return (
-    <MKBox component="section" py={{ xs: 0, sm: 12 }}>
+    <MKBox component="section" pb={{ xs: 0, sm: 6 }}>
       <MKBox
         variant="gradient"
         bgColor="dark"
@@ -51,16 +51,11 @@ function Download() {
             <MKTypography variant="body2" color="white" mb={6}>
               Cause if you do, we are offering a large variety that will fulfill your needs.
             </MKTypography>
-            <MKButton
-              variant="gradient"
-              color="warning"
-              size="large"
-              component="a"
-              route="/"
-              sx={{ mb: 2 }}
-            >
-              Discover
-            </MKButton>
+            <Link to={"/pages/landing-pages/products-list"}>
+              <MKButton variant="gradient" color="warning" size="large" sx={{ mb: 2 }}>
+                Discover
+              </MKButton>
+            </Link>
           </Grid>
         </Container>
       </MKBox>

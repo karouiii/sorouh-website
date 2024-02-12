@@ -117,7 +117,7 @@ function ContactUs() {
                     ml={2}
                     fontWeight="regular"
                   >
-                    support@sorouh.com
+                    support@sorouh.com --TO CHANGE--
                   </MKTypography>
                 </MKBox>
                 <MKBox display="flex" color="white" p={1}>

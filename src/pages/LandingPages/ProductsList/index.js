@@ -22,6 +22,8 @@ import {
   Box,
 } from "@mui/material";
 
+import ScrollTopButton from "./ScrollTopButton";
+
 // Routes
 import routes from "routes";
 import footerRoutes from "footer.routes";
@@ -48,7 +50,13 @@ const styleModal = {
   p: 4,
 };
 
+// const styleProduct = {
+//   border: "2px solid #a37913",
+//   borderRadius: "1.25rem",
+// };
+
 const ProductList = () => {
+  //  POP-UP
   const [open, setOpen] = React.useState(false);
   const [selectedItem, setSelectedItem] = React.useState(null);
 
@@ -59,6 +67,7 @@ const ProductList = () => {
     setOpen(true);
   };
 
+  // FILTER AND SEARCH
   const [categoryFilter, setCategoryFilter] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -86,6 +95,7 @@ const ProductList = () => {
     setSearchQuery(event.target.value);
   };
 
+  // PAGINATION
   const [currentPage, setCurrentPage] = useState(1);
   const categoriesPerPage = 4;
   const totalCategories = filteredProducts.length;
@@ -95,15 +105,21 @@ const ProductList = () => {
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
+    const element = document.getElementById("productsBlock");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
+  // PRODUCT IMAGE TEMPLATE
   const imageTemplate = (item) => (
     <MKBox
       bgColor="white"
-      borderRadius="xl"
       shadow="lg"
       minHeight="10rem"
       sx={{
+        border: "2px solid #a37913",
+        borderRadius: "1.25rem",
         overflow: "hidden",
         transform: "perspective(999px) rotateX(0deg) translate3d(0, 0, 0)",
         transformOrigin: "50% 0",
@@ -152,11 +168,11 @@ const ProductList = () => {
         }}
       >
         {/* Products block */}
-        <Grid container spacing={3}>
+        <Grid container spacing={3} id={"productsBlock"}>
           {/* Filter by category */}
           <Grid item xs={12} sm={3}>
             <Paper elevation={3} style={{ padding: "16px", marginBottom: "16px" }}>
-              <MKTypography color="warning" variant="h6">
+              <MKTypography variant="h6" sx={{ color: "#a37913" }}>
                 Filter by Category
               </MKTypography>
               <ToggleButtonGroup
@@ -170,9 +186,9 @@ const ProductList = () => {
                 {data.map((category) => (
                   <ToggleButton key={category.id} value={category.name}>
                     <MKTypography
-                      variant="text"
+                      variant="caption"
                       color="black"
-                      fontWeight="bold"
+                      fontWeight="normal"
                       mb={1}
                       pr={2}
                       sx={{ textAlign: "center" }}
@@ -245,6 +261,7 @@ const ProductList = () => {
                 </Modal>
               </Grid>
               <Divider sx={{ borderColor: "#191919", borderWidth: 2, margin: "8px 0" }} />
+
               <Container sx={{ height: "100%" }}>
                 <Grid container item justifyContent="center" xs={12} lg={6} mx="auto" height="100%">
                   <Stack spacing={2} sx={{ justifyContent: "center", marginTop: 2 }}>
@@ -261,6 +278,7 @@ const ProductList = () => {
           </Grid>
         </Grid>
       </Card>
+      <ScrollTopButton />
 
       <MKBox pt={6} px={1} mt={6}>
         <DefaultFooter content={footerRoutes} />

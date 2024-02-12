@@ -46,7 +46,22 @@ function CenteredBlogCard({ image, title, description }) {
           {title}
         </MKTypography>
         <MKBox mt={1} mb={3}>
-          <MKTypography variant="body2" component="p" color="text">
+          <MKTypography
+            variant="body2"
+            component="p"
+            color="text"
+            sx={{
+              overflowY: "auto",
+              maxHeight: "200px",
+              "&::-webkit-scrollbar": {
+                width: "6px",
+              },
+              "&::-webkit-scrollbar-thumb": {
+                backgroundColor: "#a37913", // Remplacez par la couleur souhaitée
+                borderRadius: "6px",
+              },
+            }}
+          >
             {description}
           </MKTypography>
         </MKBox>

@@ -36,6 +36,7 @@ import webercolSmart from "../../../../assets/images/underlays-glues-sealants-pr
 import webercolUltraGres400 from "../../../../assets/images/underlays-glues-sealants-products/webercol-UltraGres-400.png";
 import webercolorBasic from "../../../../assets/images/underlays-glues-sealants-products/webercolor-basic.png";
 import webercolorPremium from "../../../../assets/images/underlays-glues-sealants-products/webercolor-premium.png";
+import webercolProGresTopS1 from "../../../../assets/images/underlays-glues-sealants-products/webercol-ProGres-Top-S1.png";
 
 // Plasters mortars lime Images
 import webermixPratico from "../../../../assets/images/Plasters-mortars-lime-products/webermix-pratico.png";
@@ -54,6 +55,7 @@ import webersanEvobarriera from "../../../../assets/images/Plaster-skim-coats-fi
 import webersanEvocalce from "../../../../assets/images/Plaster-skim-coats-finishes-products/webersan-evocalce.png";
 import weberRZ from "../../../../assets/images/Plaster-skim-coats-finishes-products/weber-RZ.png";
 import webercemRS350 from "../../../../assets/images/Plaster-skim-coats-finishes-products/webercem-RS350.png";
+import webercemRA30 from "../../../../assets/images/Plaster-skim-coats-finishes-products/webercem-RA30.png";
 
 // Mortars for concrete restoration, consolidation and reinforcement of structures Images
 import webertecCLSfluido from "../../../../assets/images/Mortars-for-concrete-restoration-products/webertec-CLSfluido.png";
@@ -202,6 +204,13 @@ export default [
           "Breathable fine civil finish cementitious skim coat, white or gray, for exterior and interior use. Excellent workability and ease of recovery.",
         image: webercemRS350,
       },
+      {
+        id: 4,
+        name: "webercem RA30",
+        description:
+          "Universal cementitious skim coat with high adhesion performance. Indoor or outdoor on critical substrates such as concrete and predalles, excellent adhesion on old facades finished with plastic, mosaic or ceramic coatings. Resistant to weathering and carbonation.",
+        image: webercemRA30,
+      },
     ],
   },
   {
@@ -298,6 +307,13 @@ export default [
         description:
           "Decorative colored cementitious grout for joints up to 15 mm, high-performance, water-repellent, stain-resistant; Protect3 silver ion technology gives it high resistance to bacteria, mold and mildew.",
         image: webercolorPremium,
+      },
+      {
+        id: 13,
+        name: "webercol ProGres Top S1",
+        description:
+          "Improved deformability and immersion-resistant cementitious adhesive, ideal for laying ceramic stoneware on facades and pools. Excellent adhesion even when overlaying an old ceramic or marble floor.",
+        image: webercolProGresTopS1,
       },
     ],
   },
