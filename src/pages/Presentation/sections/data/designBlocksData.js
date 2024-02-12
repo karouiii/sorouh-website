@@ -1,5 +1,3 @@
-const imagesPrefix =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/material-design-system/presentation/sections";
 import weberFixPlus from "../../../../assets/images/laying-tiles-products/weber-fix-plus.png";
 import weberfixPremium2 from "../../../../assets/images/laying-tiles-products/weberfix-premium2.png";
 import weberfixPro from "../../../../assets/images/laying-tiles-products/weberfix-pro.png";
@@ -37,8 +35,6 @@ import webersanEvocalce from "../../../../assets/images/Plaster-skim-coats-finis
 // Mortars for concrete restoration, consolidation and reinforcement of structures Images
 import webertecCLSfluido from "../../../../assets/images/Mortars-for-concrete-restoration-products/webertec-CLSfluido.png";
 import webertecFer from "../../../../assets/images/Mortars-for-concrete-restoration-products/webertec-fer.png";
-
-import flexibleSealer from "../../../../assets/images/products-dumpproofing-waterproofing/Flexible-Sealer.jpg";
 
 export default [
   {
@@ -110,81 +106,6 @@ export default [
         itemDescription: "High-strength self-levelling mortar for large construction sites.",
         count: 8,
         route: "/pages/landing-pages/products-list",
-      },
-    ],
-  },
-  {
-    title: "New facades",
-    description:
-      "The façade is an essential part of any home. It's the exterior aspect of the home, representing the customer's expectations in terms of architectural style, and can't be neglected. Façade deterioration is a problem to be anticipated, as all homeowners are confronted with it at one time or another.",
-    items: [
-      {
-        image: flexibleSealer,
-        name: "FLEXIBLE SEALER",
-        count: 4,
-        route: "/pages/landing-pages/products-list",
-      },
-    ],
-  },
-  {
-    title: "Facade renovation",
-    description:
-      "Weber offers a careful selection of coatings, paints and mortars to simplify your façade renovation. Discover our cleaning and protection solutions from a varied range, adapted to all types of project. Our products facilitate cleaning and protection, and offer features such as compliance with NF standards, ease of application and durability. Façade mortars make stone restoration easy. Explore our ranges dedicated to facade renovation to improve aesthetics and durability.",
-    items: [
-      {
-        image: `${imagesPrefix}/newsletters.jpg`,
-        name: "Newsletters",
-        count: 6,
-        pro: true,
-      },
-      {
-        image: `${imagesPrefix}/contact-sections.jpg`,
-        name: "Contact Sections",
-        count: 8,
-        pro: true,
-      },
-      {
-        image: `${imagesPrefix}/forms.jpg`,
-        name: "Forms",
-        count: 3,
-        route: "/sections/input-areas/forms",
-      },
-      {
-        image: `${imagesPrefix}/inputs.jpg`,
-        name: "Inputs",
-        count: 6,
-        route: "/sections/input-areas/inputs",
-      },
-    ],
-  },
-  {
-    title: "External thermal insulation (ETI)",
-    description:
-      "Weber's Exterior Thermal Insulation (ETI) products enhance building energy efficiency and living comfort. By applying insulation to external walls, this system improves overall thermal performance, leading to significant energy savings. Façade insulation, combined with external cladding, ensures residents enjoy enhanced comfort and warmth in their homes.",
-    items: [
-      {
-        image: `${imagesPrefix}/alerts.jpg`,
-        name: "Alerts",
-        count: 4,
-        route: "/sections/attention-catchers/alerts",
-      },
-      {
-        image: `${imagesPrefix}/toasts.jpg`,
-        name: "Notifications",
-        count: 3,
-        pro: true,
-      },
-      {
-        image: `${imagesPrefix}/popovers.jpg`,
-        name: "Tooltips & Popovers",
-        count: 2,
-        route: "/sections/attention-catchers/tooltips-popovers",
-      },
-      {
-        image: `${imagesPrefix}/modals.jpg`,
-        name: "Modals",
-        count: 5,
-        route: "/sections/attention-catchers/modals",
       },
     ],
   },
