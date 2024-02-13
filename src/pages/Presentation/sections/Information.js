@@ -65,7 +65,7 @@ function Information() {
             <RotatingCard>
               <RotatingCardFront
                 image={bgFront}
-                color="warning"
+                color="gold"
                 // icon="touch_app"
                 title={<>Our vision</>}
                 description="We provide fast solutions and unique technologies in high quality. We strive continually to search and develop and find new ways to enable us to fulfill all the needs of our clients based on local and international standards using latest technologies and applications without affecting the safety and quality standards."
@@ -78,7 +78,7 @@ function Information() {
             <RotatingCard>
               <RotatingCardFront
                 image={bgFront}
-                color="warning"
+                color="gold"
                 // icon="touch_app"
                 title={<>Consulting services</>}
                 description="
@@ -92,7 +92,7 @@ function Information() {
             <RotatingCard>
               <RotatingCardFront
                 image={bgFront}
-                color="warning"
+                color="gold"
                 title={<>Marketing</>}
                 description="
                 Sorouh Chemicals Co. prioritizes client satisfaction by promptly addressing market needs. We've set up a network of accredited distributors across key cities in Libya, including Tripoli, Benghazi, Misrata, Sirte, and Sebha. This strategic network enhances our competitiveness and enables us to deliver superior services to our clients."
@@ -110,7 +110,7 @@ function Information() {
             <RotatingCard>
               <RotatingCardFront
                 image={bgFront}
-                color="warning"
+                color="gold"
                 // icon="touch_app"
                 title={<h6>Oil, Gas and Petrochemicals</h6>}
                 description="Sorouh plays a pivotal role in Libya's oil, gas, and petrochemical sector, offering top-tier products and technologies. We excel in anti-corrosion solutions, chemicals for drilling, additives for cementation and well maintenance, and industrial chemicals for gas processing. Our focus on quality makes us a leading company in this vital industry."
@@ -123,7 +123,7 @@ function Information() {
             <RotatingCard>
               <RotatingCardFront
                 image={bgFront}
-                color="warning"
+                color="gold"
                 // icon="touch_app"
                 title={<>Construction</>}
                 description="
@@ -137,7 +137,7 @@ function Information() {
             <RotatingCard>
               <RotatingCardFront
                 image={bgFront}
-                color="warning"
+                color="gold"
                 // icon="touch_app"
                 title={<>Industrial sector</>}
                 description="To contribute to development of the economic sector in the country and reduce its dependence on natural resources (oil and gas), we supply the most important material of this industrial sector including industrial lubricants and oils, industrial dyes, filling and adhesive material and industrial paints."

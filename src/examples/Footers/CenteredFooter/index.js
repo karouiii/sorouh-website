@@ -23,7 +23,7 @@ function CenteredFooter({ content }) {
     <MKBox component="footer" py={6}>
       <Grid container justifyContent="center">
         {menus.map(({ name: title, items }) => (
-          <Grid key={title} item xs={10} lg={8} display="flex" justifyContent="space-between">
+          <Grid key={title} item xs={10} lg={8} display="flex" justifyContent="space-evenly">
             {items.map(({ name, route, href }) => (
               <Stack
                 key={name}

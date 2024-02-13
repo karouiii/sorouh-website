@@ -62,6 +62,7 @@ RotatingCardFront.propTypes = {
     "error",
     "dark",
     "light",
+    "gold",
   ]),
   image: PropTypes.string.isRequired,
   icon: PropTypes.node,

@@ -45,6 +45,7 @@ DefaultCounterCard.propTypes = {
     "error",
     "light",
     "dark",
+    "gold",
   ]),
   count: PropTypes.number.isRequired,
   title: PropTypes.string,

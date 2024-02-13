@@ -25,7 +25,7 @@ import DefaultNavbarMobile from "examples/Navbars/DefaultNavbar/DefaultNavbarMob
 
 import breakpoints from "assets/theme/base/breakpoints";
 
-import bgLogoEn from "assets/images/logo-sorouh.jpg";
+import bgLogoEn from "assets/images/logo-sorouh-nbg.png";
 
 function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");

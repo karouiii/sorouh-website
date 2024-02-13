@@ -55,9 +55,8 @@ function ContactUs() {
 
   return (
     <>
-      <MKBox position="fixed" top="0.5rem" width="100%">
-        <DefaultNavbar routes={routes} />
-      </MKBox>
+      <DefaultNavbar routes={routes} sticky />
+
       <Grid container spacing={3} alignItems="center">
         <Grid item xs={12} lg={6}>
           <MKBox

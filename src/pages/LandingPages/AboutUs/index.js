@@ -132,7 +132,7 @@ function AboutUs() {
             integrated teams and consultants, engineers and technical staff.
           </MKTypography>
         </Grid>
-        <Container>
+        <Container py={12}>
           <Grid container spacing={3} direction="row" justifyContent="center" alignItems="stretch">
             <Grid item xs={12} lg={4}>
               <FilledInfoCard

@@ -12,7 +12,7 @@ import bgImage from "assets/images/shapes/waves-white.svg";
 
 function Download() {
   return (
-    <MKBox component="section" pb={{ xs: 0, sm: 6 }}>
+    <MKBox component="section" py={{ xs: 6, sm: 12 }}>
       <MKBox
         variant="gradient"
         bgColor="dark"

@@ -10,7 +10,7 @@ import FaxIcon from "@mui/icons-material/Fax";
 import MKTypography from "components/MKTypography";
 
 // Images
-import logoCT from "assets/images/logo-sorouh.jpg";
+import logoCT from "assets/images/logo-sorouh-nbg.png";
 
 const date = new Date().getFullYear();
 

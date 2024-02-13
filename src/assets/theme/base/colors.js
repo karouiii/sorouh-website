@@ -1,9 +1,3 @@
-/**
- * The base colors for the Material Kit 2 React.
- * You can add new color using this file.
- * You can customized the colors for the entire Material Kit 2 React using thie file.
- */
-
 export default {
   background: {
     default: "#f0f2f5",
@@ -69,6 +63,11 @@ export default {
     focus: "#2c3c58",
   },
 
+  gold: {
+    main: "#a37913",
+    focus: "#7a5e1b",
+  },
+
   grey: {
     100: "#f8f9fa",
     200: "#f0f2f5",
@@ -120,6 +119,10 @@ export default {
     dark: {
       main: "#42424a",
       state: "#191919",
+    },
+    gold: {
+      main: "#a37913",
+      state: "#7a5e1b",
     },
   },
 
@@ -236,6 +239,7 @@ export default {
     error: "#f44336",
     light: "#adb5bd",
     dark: "#404040",
+    gold: "#a37913",
   },
 
   inputBorderColor: "#d2d6da",
