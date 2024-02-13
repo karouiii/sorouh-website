@@ -13,7 +13,6 @@ import CenteredFooter from "examples/Footers/CenteredFooter";
 import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 
 // About Us page sections
-import Information from "pages/LandingPages/AboutUs/sections/Information";
 import Featuring from "pages/LandingPages/AboutUs/sections/Featuring";
 import Download from "pages/Presentation/sections/Download";
 
@@ -137,7 +136,16 @@ function AboutUs() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
+                icon="query_stats"
+                title="Our Vision"
+                description="We provide fast solutions and unique technologies in high quality. We strive continually to search and develop and find new ways to enable us to fulfill all the needs of our clients based on local and international standards using latest technologies and applications without affecting the safety and quality standards."
+              />
+            </Grid>
+            <Grid item xs={12} lg={4}>
+              <FilledInfoCard
+                variant="contained"
+                color="gold"
                 icon="factory"
                 title="Industrial Sector"
                 description="To contribute to development of the economic sector in the country and reduce its dependence on natural resources (oil and gas), we supply the most important material of this industrial sector including industrial lubricants and oils, industrial dyes, filling and adhesive material and industrial paints."
@@ -146,7 +154,7 @@ function AboutUs() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
                 icon="model_training"
                 title="Consulting Services"
                 description="With extensive experience and partnerships with top brands, Sorouh Chemicals Co. offers comprehensive consultation and support services from project planning to establishment, operation, and development. We provide technical guidance to various companies and contractors involved in crucial projects, particularly infrastructure projects in Libya."
@@ -155,7 +163,7 @@ function AboutUs() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
                 icon="oil_barrel"
                 title="Oil, Gas and Petrochemicals"
                 description="Sorouh plays a pivotal role in Libya's oil, gas, and petrochemical sector, offering top-tier products and technologies. We excel in anti-corrosion solutions, chemicals for drilling, additives for cementation and well maintenance, and industrial chemicals for gas processing. Our focus on quality makes us a leading company in this vital industry."
@@ -164,7 +172,7 @@ function AboutUs() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
                 icon="construction"
                 title="Construction"
                 description="
@@ -174,7 +182,7 @@ function AboutUs() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
                 icon="people"
                 title="Marketing"
                 description="Sorouh Chemicals Co. is aware that proper response to market requirements and client needs form the most important and ideal methods to gain clients satisfaction. Therefore, it has established a network of accredited distributers to cover cities all over Libya (i.e Tripoli, Benghazi, Misrata, Sirte and Sebha) which has enabled us to have a competitive edge thus providing a better service to our clients."
@@ -183,13 +191,9 @@ function AboutUs() {
           </Grid>
         </Container>
         <Download />
-        <Information />
-        {/* <Team /> */}
         <Featuring />
-        {/* <Newsletter /> */}
       </Card>
       <MKBox pt={6} px={1} mt={6}>
-        {/* <DefaultFooter content={footerRoutes} /> */}
         <CenteredFooter content={centeredFooterRoutes} />
       </MKBox>
     </>

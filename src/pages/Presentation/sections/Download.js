@@ -52,122 +52,13 @@ function Download() {
               Cause if you do, we are offering a large variety that will fulfill your needs.
             </MKTypography>
             <Link to={"/pages/landing-pages/products-list"}>
-              <MKButton variant="gradient" color="warning" size="large" sx={{ mb: 2 }}>
+              <MKButton variant="gradient" color="gold" size="large" sx={{ mb: 2 }}>
                 Discover
               </MKButton>
             </Link>
           </Grid>
         </Container>
       </MKBox>
-      {/* <Container>
-        <Grid container item xs={6} mx="auto">
-          <MKBox textAlign="center">
-            <MKTypography variant="h3" mt={6} mb={3}>
-              Available on these technologies
-            </MKTypography>
-            <Grid container spacing={3} justifyContent="center">
-              <Grid item xs={4} lg={2}>
-                <Tooltip title="Bootstrap 5 - Most popular front-end component library">
-                  <MKBox
-                    component="a"
-                    href="https://www.creative-tim.com/product/material-kit"
-                    target="_blank"
-                  >
-                    <MKBox
-                      component="img"
-                      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/bootstrap5.jpg"
-                      width="100%"
-                    />
-                  </MKBox>
-                </Tooltip>
-              </Grid>
-              <Grid item xs={4} lg={2}>
-                <Tooltip title="Comming soon">
-                  <MKBox
-                    opacity={0.5}
-                    component="a"
-                    href="#"
-                    target="_blank"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <MKBox
-                      component="img"
-                      src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/icon-tailwind.jpg"
-                      width="100%"
-                    />
-                  </MKBox>
-                </Tooltip>
-              </Grid>
-              <Grid item xs={4} lg={2}>
-                <Tooltip title="Comming soon">
-                  <MKBox
-                    opacity={0.5}
-                    component="a"
-                    href="#"
-                    target="_blank"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <MKBox
-                      component="img"
-                      src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/vue.jpg"
-                      width="100%"
-                    />
-                  </MKBox>
-                </Tooltip>
-              </Grid>
-              <Grid item xs={4} lg={2}>
-                <Tooltip title="Comming soon">
-                  <MKBox
-                    opacity={0.5}
-                    component="a"
-                    href="#"
-                    target="_blank"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <MKBox
-                      component="img"
-                      src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/angular.jpg"
-                      width="100%"
-                    />
-                  </MKBox>
-                </Tooltip>
-              </Grid>
-              <Grid item xs={4} lg={2}>
-                <Tooltip title="Comming soon">
-                  <MKBox
-                    component="a"
-                    href="https://www.creative-tim.com/product/material-kit-react"
-                    target="_blank"
-                  >
-                    <MKBox
-                      component="img"
-                      src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/react.jpg"
-                      width="100%"
-                    />
-                  </MKBox>
-                </Tooltip>
-              </Grid>
-              <Grid item xs={4} lg={2}>
-                <Tooltip title="Comming soon">
-                  <MKBox
-                    opacity={0.5}
-                    component="a"
-                    href="#"
-                    target="_blank"
-                    onClick={(e) => e.preventDefault()}
-                  >
-                    <MKBox
-                      component="img"
-                      src="https://s3.amazonaws.com/creativetim_bucket/tim_static_images/presentation-page/sketch.jpg"
-                      width="100%"
-                    />
-                  </MKBox>
-                </Tooltip>
-              </Grid>
-            </Grid>
-          </MKBox>
-        </Grid>
-      </Container> */}
     </MKBox>
   );
 }

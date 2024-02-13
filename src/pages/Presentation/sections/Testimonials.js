@@ -28,11 +28,11 @@ function Information() {
           sx={{ mx: "auto", textAlign: "center" }}
         >
           <MKTypography variant="h1">Trusted by over</MKTypography>
-          <MKTypography variant="h1" color="warning" textGradient mb={2}>
+          <MKTypography variant="h1" color="gold" textGradient mb={2}>
             52 Company
           </MKTypography>
           <MKTypography variant="body1" color="text" mb={2}>
-            lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+            We provide fast solutions and unique technologies in high quality.
           </MKTypography>
         </Grid>
         <Grid container spacing={3} sx={{ mt: 8 }}>

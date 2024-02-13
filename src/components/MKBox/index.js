@@ -44,6 +44,7 @@ MKBox.propTypes = {
     "error",
     "light",
     "dark",
+    "gold",
     "none",
   ]),
 };

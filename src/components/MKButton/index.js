@@ -45,6 +45,7 @@ MKButton.propTypes = {
     "error",
     "light",
     "dark",
+    "gold",
   ]),
   circular: PropTypes.bool,
   iconOnly: PropTypes.bool,

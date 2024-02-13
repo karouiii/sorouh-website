@@ -1,7 +1,4 @@
-// @mui icons
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
 
 import MKTypography from "components/MKTypography";
 
@@ -20,14 +17,6 @@ export default {
     {
       icon: <FacebookIcon />,
       link: "https://www.facebook.com/sorouh.chimecals",
-    },
-    {
-      icon: <TwitterIcon />,
-      link: "#",
-    },
-    {
-      icon: <YouTubeIcon />,
-      link: "#",
     },
   ],
   menus: [

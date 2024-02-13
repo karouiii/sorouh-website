@@ -36,7 +36,7 @@ function DefaultFooter({ content }) {
             <MKTypography fontWeight="bold" sx={{ fontSize: "2rem", color: "#a37913" }}>
               {brand.name}
             </MKTypography>
-            <MKBox display="flex" alignItems="center" mt={3}>
+            <MKBox display="flex" alignItems="center">
               {socials.map(({ icon, link }, key) => (
                 <MKTypography
                   key={link}

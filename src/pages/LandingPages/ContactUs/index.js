@@ -161,7 +161,7 @@ function ContactUs() {
           >
             <MKBox
               variant="gradient"
-              bgColor="warning"
+              bgColor="gold"
               coloredShadow="info"
               borderRadius="lg"
               p={2}
@@ -169,7 +169,7 @@ function ContactUs() {
               mt={-3}
               sx={{
                 background:
-                  "radial-gradient( circle farthest-corner at 10% 20%, rgba(237,3,32,0.87) 20.8%, rgba(242,121,1,0.84) 74.4% );",
+                  "radial-gradient(at right center, rgba(163, 121, 19, 1.0), rgba(1, 1, 1, 1.0));",
               }}
             >
               <MKTypography variant="h3" color="white">
@@ -229,7 +229,7 @@ function ContactUs() {
                   </Grid>
                 </Grid>
                 <Grid container item justifyContent="center" xs={12} mt={5} mb={2}>
-                  <MKButton type="submit" variant="contained" color="warning">
+                  <MKButton type="submit" variant="contained" color="gold">
                     Send Message
                   </MKButton>
                   {state.succeeded && !dismissed && (

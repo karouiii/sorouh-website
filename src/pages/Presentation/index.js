@@ -99,7 +99,7 @@ function Presentation() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
                 icon="store"
                 title="Products"
                 description="Check the possible ways of working with our product."
@@ -113,7 +113,7 @@ function Presentation() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
                 icon="info"
                 title="About us"
                 description="Read our story from the  beginning to the crafting of our ideas."
@@ -127,7 +127,7 @@ function Presentation() {
             <Grid item xs={12} lg={4}>
               <FilledInfoCard
                 variant="contained"
-                color="warning"
+                color="gold"
                 icon="email"
                 title="Contact us"
                 description="Feel free to contact us, discuss or get the most frequent answers."

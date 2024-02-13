@@ -70,6 +70,7 @@ function CenteredFooter({ content }) {
                 variant="body2"
                 color={light ? "white" : "secondary"}
                 fontWeight="regular"
+                fontSize="2rem"
               >
                 {icon}
               </MKTypography>

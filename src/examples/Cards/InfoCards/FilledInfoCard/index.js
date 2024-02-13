@@ -136,6 +136,7 @@ FilledInfoCard.propTypes = {
     "error",
     "light",
     "dark",
+    "gold",
   ]),
   icon: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,

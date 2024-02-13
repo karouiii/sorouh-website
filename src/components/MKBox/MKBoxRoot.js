@@ -32,6 +32,7 @@ export default styled(Box)(({ theme, ownerState }) => {
     "error",
     "dark",
     "light",
+    "gold",
   ];
 
   const validColors = [
@@ -47,6 +48,7 @@ export default styled(Box)(({ theme, ownerState }) => {
     "light",
     "dark",
     "text",
+    "gold",
     "grey-100",
     "grey-200",
     "grey-300",

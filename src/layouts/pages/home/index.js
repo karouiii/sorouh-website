@@ -1,5 +1,5 @@
 import Presentation from "pages/Presentation";
 
-export default function PresentationPage() {
+export default function HomePage() {
   return <Presentation />;
 }
