@@ -1,11 +1,17 @@
 {
   "files": {
     "main.css": "/sorouh-website/static/css/main.7f58dc78.css",
-    "main.js": "/sorouh-website/static/js/main.25b4d10d.js",
+    "main.js": "/sorouh-website/static/js/main.52ba1913.js",
     "static/media/rotating-card-bg-front.jpeg": "/sorouh-website/static/media/rotating-card-bg-front.bdcdfadc0dacb9bc5f23.jpeg",
+    "static/media/weberprim-RA13.png": "/sorouh-website/static/media/weberprim-RA13.871b4b06e2f864d55f17.png",
+    "static/media/weberdry-reflex-P.png": "/sorouh-website/static/media/weberdry-reflex-P.b1097e30b0ae911b19bc.png",
+    "static/media/webercol-UltraGres-Flex.png": "/sorouh-website/static/media/webercol-UltraGres-Flex.238285520a9ab31380e2.png",
+    "static/media/weberprim-PUR-1K.png": "/sorouh-website/static/media/weberprim-PUR-1K.b3970a67e54da2652571.png",
+    "static/media/webersan-top-evolution.png": "/sorouh-website/static/media/webersan-top-evolution.5a3d10e146eb68f32838.png",
     "static/media/bg-products.jpg": "/sorouh-website/static/media/bg-products.8409ab469c3bb7759d2d.jpg",
     "static/media/weberfloor-4716-Primer.png": "/sorouh-website/static/media/weberfloor-4716-Primer.d5b3edf104a0f1f85d45.png",
-    "static/media/waves-white.svg": "/sorouh-website/static/media/waves-white.7e7579c6e93ead70064fb4e8dd899f32.svg",
+    "static/media/weberprim-PF15.png": "/sorouh-website/static/media/weberprim-PF15.db94b08bcb02912aaad2.png",
+    "static/media/weber-latex-c10.png": "/sorouh-website/static/media/weber-latex-c10.1dbfad90077989efd784.png",
     "static/media/weberdry-PUR-seal.png": "/sorouh-website/static/media/weberdry-PUR-seal.b9546724b13e6e99a9ed.png",
     "static/media/webercalce-iniezione5.png": "/sorouh-website/static/media/webercalce-iniezione5.a4b89f41bdbb7d4bfa98.png",
     "static/media/webercalce-into-F.png": "/sorouh-website/static/media/webercalce-into-F.0bab41ab5d3b2f0561af.png",
@@ -56,15 +62,14 @@
     "static/media/weber-L50-TOP.png": "/sorouh-website/static/media/weber-L50-TOP.90f89089f476e4b2d7f8.png",
     "static/media/contact-us.jpg": "/sorouh-website/static/media/contact-us.e94473f01faae7ef87bf.jpg",
     "static/media/webertec-fer.png": "/sorouh-website/static/media/webertec-fer.dc3d9aa485d74fdfe930.png",
-    "static/media/logo-sorouh.jpg": "/sorouh-website/static/media/logo-sorouh.e068de00ebccffe3df59.jpg",
     "static/media/weberdry-PUR-flex30.png": "/sorouh-website/static/media/weberdry-PUR-flex30.59e2beafcc8d3f5a0867.png",
     "static/media/webersan-evobarriera.png": "/sorouh-website/static/media/webersan-evobarriera.6c178ceb5d6f24bf392b.png",
-    "static/media/logo-sorouh-ar.jpg": "/sorouh-website/static/media/logo-sorouh-ar.a68fef6f9a8c95dd0405.jpg",
     "static/media/webercolor-premium.png": "/sorouh-website/static/media/webercolor-premium.9e7ff330d152f2e37649.png",
     "static/media/oil.jpg": "/sorouh-website/static/media/oil.157a6875aa68d669851f.jpg",
     "static/media/industrial.jpg": "/sorouh-website/static/media/industrial.e480e392adb9e6b66f39.jpg",
     "static/media/vision.jpg": "/sorouh-website/static/media/vision.a204b34797ae1ee32870.jpg",
     "static/media/construction.jpg": "/sorouh-website/static/media/construction.28974254a599a40eeae3.jpg",
+    "static/media/Weber-Logo.png": "/sorouh-website/static/media/Weber-Logo.b99be1db7a46ddfac9f0.png",
     "static/media/bg-presentation.jpg": "/sorouh-website/static/media/bg-presentation.4c52c199af1a52805470.jpg",
     "static/media/marketing.jpg": "/sorouh-website/static/media/marketing.91ae7cd7f5aab535d294.jpg",
     "static/media/consulting.jpg": "/sorouh-website/static/media/consulting.9ecfa94b50da672793be.jpg",
@@ -72,10 +77,10 @@
     "static/media/weber-saint-gobain.svg": "/sorouh-website/static/media/weber-saint-gobain.362ce282bc73239c1a8235ad826618dd.svg",
     "index.html": "/sorouh-website/index.html",
     "main.7f58dc78.css.map": "/sorouh-website/static/css/main.7f58dc78.css.map",
-    "main.25b4d10d.js.map": "/sorouh-website/static/js/main.25b4d10d.js.map"
+    "main.52ba1913.js.map": "/sorouh-website/static/js/main.52ba1913.js.map"
   },
   "entrypoints": [
     "static/css/main.7f58dc78.css",
-    "static/js/main.25b4d10d.js"
+    "static/js/main.52ba1913.js"
   ]
 }
