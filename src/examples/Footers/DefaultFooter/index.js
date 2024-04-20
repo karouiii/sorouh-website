@@ -4,15 +4,27 @@ import { Link } from "react-router-dom";
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
+import { useState, useEffect } from "react";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 function DefaultFooter({ content }) {
   const { brand, socials, menus, copyright } = content;
+
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Selected language from local storage:", selectedLanguage);
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
 
   return (
     <MKBox component="footer">
@@ -33,9 +45,6 @@ function DefaultFooter({ content }) {
                 <MKBox component="img" src={brand.image} alt={brand.name} maxWidth="7rem" mb={2} />
               </Link>
             </MKBox>
-            <MKTypography fontWeight="bold" sx={{ fontSize: "2rem", color: "#a37913" }}>
-              {brand.name}
-            </MKTypography>
             <MKBox display="flex" alignItems="center">
               {socials.map(({ icon, link }, key) => (
                 <MKTypography
@@ -54,32 +63,39 @@ function DefaultFooter({ content }) {
               ))}
             </MKBox>
           </Grid>
-          {menus.map(({ name: title, items }) => (
-            <Grid key={title} item xs={6} md={4} sx={{ mb: 3 }}>
+          {menus.map(({ name: title, arabicTitle, items }) => (
+            <Grid
+              key={title}
+              item
+              xs={6}
+              md={4}
+              sx={{
+                mb: 3,
+                textAlign: selectedLanguage === "arabic" ? "right" : "inherit",
+              }}
+            >
               <MKTypography
                 display="block"
-                variant="button"
+                variant="h5"
                 fontWeight="bold"
                 textTransform="capitalize"
                 mb={1}
+                sx={{ color: "#a37913" }}
               >
-                {title}
+                {selectedLanguage === "english" ? title : arabicTitle}
               </MKTypography>
               <MKBox component="ul" p={0} m={0} sx={{ listStyle: "none" }}>
-                {items.map(({ icon, name, route, href }) => (
+                {items.map(({ icon, name, arabicName, route }) => (
                   <MKBox key={name} component="li" p={0} m={0} lineHeight={1.25}>
-                    {href ? (
+                    {selectedLanguage === "arabic" ? (
                       <MKTypography
-                        component="a"
-                        href={href}
-                        target="_blank"
-                        rel="noreferrer"
+                        component={Link}
+                        to={route}
                         variant="button"
                         fontWeight="regular"
                         textTransform="capitalize"
                       >
-                        {icon}
-                        {name}
+                        {arabicName}&nbsp;{icon}
                       </MKTypography>
                     ) : (
                       <MKTypography
@@ -89,7 +105,7 @@ function DefaultFooter({ content }) {
                         fontWeight="regular"
                         textTransform="capitalize"
                       >
-                        {icon}&nbsp;{name}
+                        {icon}&nbsp; {name}
                       </MKTypography>
                     )}
                   </MKBox>

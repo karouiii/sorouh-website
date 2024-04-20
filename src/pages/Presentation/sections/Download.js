@@ -8,7 +8,7 @@ import MKButton from "components/MKButton";
 import MKTypography from "components/MKTypography";
 
 // Images
-import bgImage from "assets/images/shapes/waves-white.svg";
+import bgImage from "assets/images/Weber-Logo.png";
 
 function Download() {
   return (
@@ -29,7 +29,7 @@ function Download() {
           left={0}
           width="100%"
           zIndex={1}
-          opacity={0.2}
+          opacity={0.7}
         />
         <Container sx={{ position: "relative", zIndex: 2, py: 12 }}>
           <Grid

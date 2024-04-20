@@ -1,17 +1,10 @@
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 
-// @mui material components
 import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-
-// @mui icons
-// import FacebookIcon from "@mui/icons-material/Facebook";
-// import TwitterIcon from "@mui/icons-material/Twitter";
-// import InstagramIcon from "@mui/icons-material/Instagram";
-// import PinterestIcon from "@mui/icons-material/Pinterest";
-// import GitHubIcon from "@mui/icons-material/GitHub";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
@@ -19,12 +12,24 @@ import MKTypography from "components/MKTypography";
 function CenteredFooter({ content }) {
   const { socials, menus, copyright, light } = content;
 
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Selected language from local storage:", selectedLanguage);
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
+
   return (
     <MKBox component="footer" py={6}>
       <Grid container justifyContent="center">
         {menus.map(({ name: title, items }) => (
           <Grid key={title} item xs={10} lg={8} display="flex" justifyContent="space-evenly">
-            {items.map(({ name, route, href }) => (
+            {items.map(({ name, arabicName, route }) => (
               <Stack
                 key={name}
                 direction="row"
@@ -33,29 +38,16 @@ function CenteredFooter({ content }) {
                 spacing={{ xs: 2, lg: 3, xl: 6 }}
                 mb={3}
               >
-                {href ? (
-                  <MKTypography
-                    component="a"
-                    color={light ? "white" : "secondary"}
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="button"
-                    fontWeight="regular"
-                  >
-                    {name}
-                  </MKTypography>
-                ) : (
-                  <MKTypography
-                    component={Link}
-                    to={route}
-                    variant="button"
-                    fontWeight="regular"
-                    textTransform="capitalize"
-                  >
-                    {name}
-                  </MKTypography>
-                )}
+                <MKTypography
+                  component={Link}
+                  to={route}
+                  variant="button"
+                  fontWeight="bold"
+                  textTransform="capitalize"
+                  sx={{ fontSize: "1rem", color: "#a37913" }}
+                >
+                  {selectedLanguage === "arabic" ? arabicName : name}
+                </MKTypography>
               </Stack>
             ))}
           </Grid>

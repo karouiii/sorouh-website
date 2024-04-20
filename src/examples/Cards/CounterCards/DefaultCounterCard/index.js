@@ -14,7 +14,7 @@ function DefaultCounterCard({ color, count, title, description, ...rest }) {
         <CountUp end={count} duration={1} {...rest} />
       </MKTypography>
       {title && (
-        <MKTypography variant="h5" mt={2} mb={1}>
+        <MKTypography variant="h4" mt={2} mb={1}>
           {title}
         </MKTypography>
       )}

@@ -2,7 +2,7 @@
 const bgImage =
   "`${linearGradient(rgba(gradients.dark.main, 0.5), rgba(gradients.dark.state, 0.5))}, url(${bgImage})`";
 
-const headerOneCode = `// @mui material components
+const headerOneCode = `
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";

@@ -1,4 +1,3 @@
-// @mui material components
 import Fade from "@mui/material/Fade";
 
 // Material Kit 2 React base styles

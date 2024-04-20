@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 

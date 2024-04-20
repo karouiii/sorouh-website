@@ -1,4 +1,3 @@
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
@@ -9,11 +8,13 @@ import MKTypography from "components/MKTypography";
 import DefaultReviewCard from "examples/Cards/ReviewCards/DefaultReviewCard";
 
 // Images
-// import appleLogo from "assets/images/logos/gray-logos/logo-apple.svg";
-// import facebookLogo from "assets/images/logos/gray-logos/logo-facebook.svg";
-// import nasaLogo from "assets/images/logos/gray-logos/logo-nasa.svg";
+import AlMokawloon from "assets/images/logos/clients-logos/Al-Mokawloon.png";
+import LibyaNOC from "assets/images/logos/clients-logos/Libya-NOC.jpg";
+import agocLogo from "assets/images/logos/clients-logos/agoc.png";
+import auccLogo from "assets/images/logos/clients-logos/aucc.png";
 // import vodafoneLogo from "assets/images/logos/gray-logos/logo-vodafone.svg";
 // import digitalOceanLogo from "assets/images/logos/gray-logos/logo-digitalocean.svg";
+import MKAvatar from "components/MKAvatar";
 
 function Information() {
   return (
@@ -68,15 +69,28 @@ function Information() {
           </Grid>
         </Grid>
         <Divider sx={{ my: 6 }} />
-        {/* <Grid container spacing={3} justifyContent="center">
+        <Grid container spacing={1} justifyContent="center">
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={appleLogo} alt="Apple" width="100%" opacity={0.6} />
+            <MKAvatar src={AlMokawloon} alt="AlMokawloon" variant="square" size="xxl" />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={facebookLogo} alt="Facebook" width="100%" opacity={0.6} />
+            <MKAvatar src={LibyaNOC} alt="LibyaNOC" variant="square" size="xxl" />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
-            <MKBox component="img" src={nasaLogo} alt="Nasa" width="100%" opacity={0.6} />
+            <MKAvatar src={agocLogo} alt="agoc" variant="square" size="xxl" />
+          </Grid>
+          <Grid item xs={6} md={4} lg={2}>
+            <MKAvatar src={auccLogo} alt="aucc" variant="square" size="xxl" />
+          </Grid>
+
+          {/* <Grid item xs={6} md={4} lg={2}>
+            <MKBox component="img" src={AlMokawloon} alt="AlMokawloon" width="100%" />
+          </Grid>
+          <Grid item xs={6} md={4} lg={2}>
+            <MKBox component="img" src={LibyaNOC} alt="LibyaNOC" width="60%" opacity={0.6} />
+          </Grid>
+          <Grid item xs={6} md={4} lg={2}>
+            <MKBox component="img" src={agocLogo} alt="agoc" width="100%" opacity={0.6} />
           </Grid>
           <Grid item xs={6} md={4} lg={2}>
             <MKBox component="img" src={vodafoneLogo} alt="Vodafone" width="100%" opacity={0.6} />
@@ -89,8 +103,8 @@ function Information() {
               width="100%"
               opacity={0.6}
             />
-          </Grid>
-        </Grid> */}
+          </Grid> */}
+        </Grid>
       </Container>
     </MKBox>
   );

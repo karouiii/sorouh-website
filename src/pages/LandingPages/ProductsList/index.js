@@ -1,12 +1,11 @@
 import Card from "@mui/material/Card";
-// import Icon from "@mui/material/Icon";
+import MKAvatar from "components/MKAvatar";
 import Container from "@mui/material/Container";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 import MKBox from "components/MKBox";
 // import MKPagination from "components/MKPagination";
-import MKTypography from "components/MKTypography";
 // import Icon from "@mui/material/Icon";
 import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 import DefaultFooter from "examples/Footers/DefaultFooter";
@@ -16,10 +15,10 @@ import {
   TextField,
   ToggleButton,
   ToggleButtonGroup,
-  Typography,
   Divider,
   Modal,
   Box,
+  Typography,
 } from "@mui/material";
 
 import ScrollTopButton from "./ScrollTopButton";
@@ -36,18 +35,29 @@ import React, { useState } from "react";
 
 //data
 import data from "pages/Presentation/sections/data/productsData";
+import MKTypography from "components/MKTypography";
+// import CircleIcon from "@mui/icons-material/Circle";
+import AddIcon from "@mui/icons-material/Add";
 
 const styleModal = {
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
   bgcolor: "background.paper",
   border: "2px solid #a37913",
   borderRadius: "1.25rem",
   boxShadow: 24,
   p: 4,
+  "@media (max-width: 768px)": {
+    width: 300, // Changez cette valeur en fonction de votre besoin
+  },
+  "@media (min-width: 769px) and (max-width: 1024px)": {
+    width: 400, // Changez cette valeur en fonction de votre besoin
+  },
+  "@media (min-width: 1025px)": {
+    width: 700, // Changez cette valeur en fonction de votre besoin
+  },
 };
 
 // const styleProduct = {
@@ -218,9 +228,9 @@ const ProductList = () => {
                 {currentCategories.map((category) => (
                   <React.Fragment key={category.category}>
                     <Grid item xs={12}>
-                      <Typography variant="h5" style={{ marginBottom: "8px" }}>
+                      <MKTypography variant="h5" style={{ marginBottom: "8px" }}>
                         {category.name}
-                      </Typography>
+                      </MKTypography>
                       <Divider sx={{ borderColor: "#191919", borderWidth: 2, margin: "8px 0" }} />
                     </Grid>
                     {category.items.map((item) => (
@@ -251,12 +261,41 @@ const ProductList = () => {
                   aria-describedby="modal-modal-description"
                 >
                   <Box sx={styleModal}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                      {selectedItem && selectedItem.name}
-                    </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    <MKBox display="flex" justifyContent="space-between" alignItems="center">
+                      <MKTypography color="gold" id="modal-modal-title" variant="h4" component="h2">
+                        {selectedItem && selectedItem.name}
+                      </MKTypography>
+                      {selectedItem && selectedItem.image && (
+                        <MKAvatar
+                          src={selectedItem.image}
+                          alt={selectedItem.name}
+                          variant="rounded"
+                          size="lg"
+                          shadow="md"
+                        />
+                      )}
+                    </MKBox>
+                    <Typography id="modal-modal-description" textAlign={"justify"} sx={{ mt: 2 }}>
                       {selectedItem && selectedItem.description}
                     </Typography>
+                    {selectedItem && selectedItem.moreDescription && (
+                      <>
+                        <Typography variant="h4" sx={{ mt: 2 }}>
+                          More details :
+                        </Typography>
+                        {selectedItem &&
+                          selectedItem.moreDescription.map((detail, index) => (
+                            <Typography
+                              key={index}
+                              variant="h6"
+                              sx={{ mt: 1, display: "flex", alignItems: "center" }}
+                            >
+                              <AddIcon fontSize="small" color="gold" sx={{ mr: 1 }} />
+                              {detail.detail}
+                            </Typography>
+                          ))}
+                      </>
+                    )}
                   </Box>
                 </Modal>
               </Grid>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // react-router components
 import { Link } from "react-router-dom";
@@ -6,26 +6,51 @@ import { Link } from "react-router-dom";
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-// @mui material components
 import Collapse from "@mui/material/Collapse";
 import MuiLink from "@mui/material/Link";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
-// Material Kit 2 React example components
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
+
 import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarDropdown";
 
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
+  const [language, setLanguage] = useState("english"); // State variable for language selection
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false); // State variable for dropdown visibility
+
+  // Event handler for language change
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
+  };
+
+  // Event handler for toggling language dropdown
+  const toggleLanguageDropdown = () => {
+    setLanguageDropdownOpen(!languageDropdownOpen);
+  };
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Selected language from local storage:", selectedLanguage);
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
+
   const renderNavbarItems = routes.map(
-    ({ name, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
+    ({ name, arabicName, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
       <DefaultNavbarDropdown
         key={name}
-        name={name}
+        name={selectedLanguage === "english" ? name : arabicName}
         icon={icon}
         collapseStatus={name === collapse}
         onClick={() => handleSetCollapse(name)}
@@ -47,6 +72,7 @@ function DefaultNavbarMobile({ routes, open }) {
                       py={1}
                       px={0.5}
                     >
+                      {selectedLanguage === "english" ? item.name : item.arabicName}
                       {item.name}
                     </MKTypography>
                     {item.collapse.map((el) => (
@@ -133,10 +159,40 @@ function DefaultNavbarMobile({ routes, open }) {
   );
 
   return (
-    <Collapse in={Boolean(open)} timeout="auto" unmountOnExit>
-      <MKBox width="calc(100% + 1.625rem)" my={2} ml={-2}>
+    <Collapse
+      in={Boolean(open)}
+      timeout="auto"
+      unmountOnExit
+      sx={{
+        textAlign: selectedLanguage === "arabic" ? "right" : "inherit",
+      }}
+    >
+      <MKBox
+        width="calc(100% + 1.625rem)"
+        my={2}
+        ml={-2}
+        display="flex"
+        flexDirection="column"
+        alignItems="flex-end"
+      >
         {renderNavbarItems}
       </MKBox>
+      <FormControl
+        sx={{
+          paddingRight: selectedLanguage === "arabic" ? 2 : 0,
+        }}
+      >
+        <Select
+          value={language}
+          onChange={handleLanguageChange}
+          open={languageDropdownOpen}
+          onClose={toggleLanguageDropdown}
+          onOpen={toggleLanguageDropdown}
+        >
+          <MenuItem value="english">En</MenuItem>
+          <MenuItem value="arabic">Ar</MenuItem>
+        </Select>
+      </FormControl>
     </Collapse>
   );
 }

@@ -1,10 +1,11 @@
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
 
+import { useState, useEffect } from "react";
+
 // react-router-dom components
 import { Link } from "react-router-dom";
 
-// @mui material components
 import Icon from "@mui/material/Icon";
 import MuiLink from "@mui/material/Link";
 
@@ -12,10 +13,24 @@ import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 function FilledInfoCard({ variant, color, icon, title, description, action }) {
+  // get language from local storage
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
+
   const buttonStyles = {
     width: "max-content",
     display: "flex",
     alignItems: "center",
+    justifyContent: selectedLanguage === "english" ? "flex-start" : "flex-end", // Align right if not English
+    flexDirection: selectedLanguage === "english" ? "row" : "row-reverse",
 
     "& .material-icons-round": {
       fontSize: "1.125rem",
@@ -39,8 +54,9 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
   return (
     <MKBox
       display={{ xs: "block", md: "flex" }}
+      sx={{ flexDirection: selectedLanguage === "arabic" ? "row-reverse" : "inherit" }}
       variant={variant}
-      bgColor={variant === "contained" ? "grey-100" : color}
+      bgColor={variant === "contained" ? "#ececec" : color}
       borderRadius="xl"
       pt={3.5}
       pb={3}
@@ -57,7 +73,14 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
       >
         {typeof icon === "string" ? <Icon>{icon}</Icon> : icon}
       </MKTypography>
-      <MKBox pt={{ xs: 3, md: 0 }} pl={{ xs: 0, md: 2 }} lineHeight={1}>
+      <MKBox
+        pt={{ xs: 3, md: 0 }}
+        pl={{ xs: 0, md: 2 }}
+        lineHeight={1}
+        sx={{
+          textAlign: selectedLanguage === "arabic" ? "right" : "inherit",
+        }}
+      >
         <MKTypography
           display="block"
           variant="5"
@@ -95,9 +118,13 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
             variant="body2"
             fontWeight="regular"
             color={variant === "contained" ? color : "white"}
+            ml={selectedLanguage === "english" ? "inherit" : "auto"}
             sx={buttonStyles}
           >
-            {action.label} <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
+            {action.label}{" "}
+            <Icon sx={{ fontWeight: "bold" }}>
+              {selectedLanguage === "english" ? "arrow_forward" : "arrow_back"}
+            </Icon>
           </MKTypography>
         ) : null}
         {action && action.type === "internal" ? (
@@ -107,9 +134,13 @@ function FilledInfoCard({ variant, color, icon, title, description, action }) {
             variant="body2"
             fontWeight="regular"
             color={variant === "contained" ? color : "white"}
+            ml={selectedLanguage === "english" ? "inherit" : "auto"}
             sx={buttonStyles}
           >
-            {action.label} <Icon sx={{ fontWeight: "bold" }}>arrow_forward</Icon>
+            {action.label}{" "}
+            <Icon sx={{ fontWeight: "bold" }}>
+              {selectedLanguage === "english" ? "arrow_forward" : "arrow_back"}
+            </Icon>
           </MKTypography>
         ) : null}
       </MKBox>

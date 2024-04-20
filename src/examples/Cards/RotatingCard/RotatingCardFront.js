@@ -1,13 +1,26 @@
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 
-// @mui material components
 import Icon from "@mui/material/Icon";
 
 import MKBox from "components/MKBox";
 import MKTypography from "components/MKTypography";
 
 function RotatingCardFront({ color, image, icon, title, description }) {
+  // get language from local storage
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Selected language from local storage:", selectedLanguage);
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
+
   return (
     <MKBox
       display="flex"
@@ -26,6 +39,7 @@ function RotatingCardFront({ color, image, icon, title, description }) {
           )}, url(${image})`,
         backgroundSize: "cover",
         backfaceVisibility: "hidden",
+        height: selectedLanguage === "english" ? "350px" : "280px",
       }}
     >
       <MKBox py={5} px={3} textAlign="center" lineHeight={1}>
@@ -34,10 +48,25 @@ function RotatingCardFront({ color, image, icon, title, description }) {
             {typeof icon === "string" ? <Icon>{icon}</Icon> : icon}
           </MKTypography>
         )}
-        <MKTypography variant="h3" color="white" gutterBottom>
+        <MKTypography variant="h4" color="white" gutterBottom>
           {title}
         </MKTypography>
-        <MKTypography variant="body2" color="white" opacity={0.8}>
+        <MKTypography
+          variant="body2"
+          color="white"
+          opacity={0.8}
+          // sx={{
+          //   overflowY: "auto",
+          //   maxHeight: "100px",
+          //   "&::-webkit-scrollbar": {
+          //     width: "2px",
+          //   },
+          //   "&::-webkit-scrollbar-thumb": {
+          //     backgroundColor: "#a37913",
+          //     borderRadius: "6px",
+          //   },
+          // }}
+        >
           {description}
         </MKTypography>
       </MKBox>

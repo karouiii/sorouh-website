@@ -39,8 +39,11 @@ import webertecFer from "../../../../assets/images/Mortars-for-concrete-restorat
 export default [
   {
     title: "Laying tiles",
+    arTitle: "وضع البلاط",
     description:
       "Whether for new-build or renovation projects, tiling requires meticulous attention to detail and quality finishes. Because construction professionals often have to complete the job within a given timeframe, Weber has developed a range of products to make tiling easier.",
+    arDescription:
+      "سواء كان ذلك لمشاريع البناء الجديدة أو التجديد، يتطلب التبليط اهتمامًا دقيقًا بالتفاصيل والتشطيبات عالية الجودة. نظرًا لأنه يتعين على محترفي البناء في كثير من الأحيان إكمال المهمة خلال إطار زمني محدد، فقد طورت شركة Weber مجموعة من المنتجات لتسهيل عملية التبليط.",
     items: [
       {
         image: weberFixPlus,
@@ -74,8 +77,11 @@ export default [
   },
   {
     title: "Preparing and finishing floors",
+    arTitle: "تجهيز وتشطيب الأرضيات",
     description:
       "Preparing floors with Weber solutions guarantees successful construction or renovation. Easy to use, they meet professional requirements, offering optimal preparation with rapid setting. Weber decorative and industrial coatings personalize floors, ensuring lasting aesthetic appeal. With optimum acoustic performance and impact resistance, they guarantee long-term use.",
+    arDescription:
+      "يضمن إعداد الأرضيات باستخدام حلول Weber البناء أو التجديد الناجح. سهلة الاستخدام، وتلبي المتطلبات المهنية، وتوفر الإعداد الأمثل مع الإعداد السريع. تضفي طلاءات ويبر الزخرفية والصناعية طابعًا شخصيًا على الأرضيات، مما يضمن المظهر الجمالي الدائم. بفضل الأداء الصوتي الأمثل ومقاومة الصدمات، فإنها تضمن الاستخدام طويل الأمد.",
     items: [
       {
         image: weberfloor4040,
@@ -111,8 +117,11 @@ export default [
   },
   {
     title: "Waterproofing solutions",
+    arTitle: "حلول العزل المائي",
     description:
       "Explore Weber's waterproofing solutions for balconies and terraces. Our products, including ready-to-use liquid, polyurethane, acrylic, or bituminous membranes, as well as osmotic waterproofing cements, are designed for durable and effective interventions. Safeguard your spaces from external aggressors and structural movements, ensuring long-lasting water tightness.",
+    arDescription:
+      "اكتشف حلول العزل المائي التي تقدمها شركة Weber للشرفات والتراسات. تم تصميم منتجاتنا، بما في ذلك الأغشية السائلة أو البولي يوريثين أو الأكريليك أو البيتومين الجاهزة للاستخدام، بالإضافة إلى الأسمنت العازل للماء الأسموزي، من أجل تدخلات دائمة وفعالة. قم بحماية المساحات الخاصة بك من المعتدين الخارجيين والحركات الهيكلية، مما يضمن ضيق المياه لفترة طويلة.",
     items: [
       {
         image: weberdryELASTO,
@@ -190,8 +199,11 @@ export default [
   },
   {
     title: "Underlays glues sealants",
+    arTitle: "الركيزة التحتية للمواد اللاصقة",
     description:
       "When renovating or designing a new building, prioritize durable, European-certified products for both interior and exterior flooring. Explore our full range of webercol cementitious adhesives and paste adhesives, suitable for ceramic, stoneware, parquet, and marble in standard and large trendy formats. For grouting thin joints, choose products that guarantee long-term color uniformity, resistance to wear, and protection against cleaning products, preserving the floor's beauty.",
+    arDescription:
+      "عند تجديد أو تصميم مبنى جديد، قم بإعطاء الأولوية للمنتجات المتينة والمعتمدة من أوروبا للأرضيات الداخلية والخارجية. استكشف مجموعتنا الكاملة من المواد اللاصقة الأسمنتية والمواد اللاصقة المعجونة من ويبركول، المناسبة للسيراميك والأواني الحجرية والباركيه والرخام في الأشكال القياسية والكبيرة العصرية. لحشو المفاصل الرقيقة، اختر المنتجات التي تضمن توحيد اللون على المدى الطويل، ومقاومة التآكل، والحماية من منتجات التنظيف، والحفاظ على جمال الأرضية.",
     items: [
       {
         image: weberepoxEasy,
@@ -237,8 +249,11 @@ export default [
   },
   {
     title: "Plasters mortars lime",
+    arTitle: "طلاءات الملاط الجيري",
     description:
       "A wide range of products including mortars, premixed plasters and wall coatings, designated for every construction need for both modern buildings and historic buildings. Our products are durable and perfect for upgrading or bringing back the original appearance of a building. Plasters and mortars can be applied either by hand or machine to allow ease of use in any situation with a variety of tools. Also check out our range of mortar additives and building latexes, perfect for different needs and particularly weather resistant.",
+    arDescription:
+      "مجموعة واسعة من المنتجات، بما في ذلك الملاط والجص المخلوط مسبقًا وطلاءات الجدران، المخصصة لكل احتياجات البناء لكل من المباني الحديثة والمباني التاريخية. منتجاتنا متينة ومثالية لترقية أو إعادة المظهر الأصلي للمبنى. يمكن تطبيق الجص وقذائف الهاون إما يدويًا أو بالآلة للسماح بسهولة الاستخدام في أي موقف باستخدام مجموعة متنوعة من الأدوات. تحقق أيضًا من مجموعتنا من إضافات الملاط ومواد البناء المطاطية، المثالية لتلبية الاحتياجات المختلفة وخاصة مقاومة الطقس.",
     items: [
       {
         image: webermixPratico,
@@ -252,8 +267,11 @@ export default [
   },
   {
     title: "Plaster skim coats finishes for rehabilitation",
+    arTitle: "تشطيبات الجص المقشود لإعادة التأهيل",
     description:
       "Weber provides a wide range of skim coatings for both exterior and interior use, offering protection against weathering and pollution. These coatings safeguard facades from issues like cracking and efflorescence, ensuring longevity and structural integrity. Additionally, Weber specializes in rehabilitating damp masonry with effective solutions tailored to restore walls efficiently.",
+    arDescription:
+      "توفر شركة Weber مجموعة واسعة من الطلاءات المقشودة للاستخدام الخارجي والداخلي، مما يوفر الحماية ضد العوامل الجوية والتلوث. تحمي هذه الطلاءات الواجهات من مشكلات مثل التشقق والازدهار، مما يضمن طول العمر والسلامة الهيكلية. بالإضافة إلى ذلك، تتخصص شركة Weber في إعادة تأهيل المباني الرطبة بحلول فعالة مصممة خصيصًا لترميم الجدران بكفاءة.",
     items: [
       {
         image: webersanEvobarriera,
@@ -275,8 +293,11 @@ export default [
   },
   {
     title: "Mortars for concrete restoration, consolidation and reinforcement of structures",
+    arTitle: "ملاط لترميم الخرسانة وتوحيد وتعزيز الهياكل",
     description:
       "This section focuses on products for repairing concrete, strengthening masonry and reinforced concrete structures, with proven effectiveness. Balconies and terraces are crucial for facade aesthetics but are vulnerable to damage from external factors like moisture, acid rain, and freeze-thaw cycles. Carbon dioxide in the air further corrodes them through carbonation, leading to reinforcement corrosion and aesthetic damage. Proper maintenance, including waterproofing solutions, is essential for preserving your balcony or terrace.",
+    arDescription:
+      "يركز هذا القسم على منتجات إصلاح الخرسانة وتقوية البناء والهياكل الخرسانية المسلحة ذات الفعالية المؤكدة. تعتبر الشرفات والمدرجات ضرورية لجماليات الواجهة ولكنها عرضة للتلف الناتج عن العوامل الخارجية مثل الرطوبة والأمطار الحمضية ودورات ذوبان الجليد والتجميد. يؤدي ثاني أكسيد الكربون الموجود في الهواء إلى تآكلها من خلال الكربنة، مما يؤدي إلى تآكل التسليح والضرر الجمالي. تعد الصيانة المناسبة، بما في ذلك حلول العزل المائي، ضرورية للحفاظ على شرفتك.",
     items: [
       {
         image: webertecCLSfluido,

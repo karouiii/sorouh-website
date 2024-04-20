@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
-// @mui material components
 import Container from "@mui/material/Container";
 import Icon from "@mui/material/Icon";
 import Popper from "@mui/material/Popper";
@@ -27,6 +26,10 @@ import breakpoints from "assets/theme/base/breakpoints";
 
 import bgLogoEn from "assets/images/logo-sorouh-nbg.png";
 
+import MenuItem from "@mui/material/MenuItem";
+import Select from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
+
 function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, center }) {
   const [dropdown, setDropdown] = useState("");
   const [dropdownEl, setDropdownEl] = useState("");
@@ -39,6 +42,29 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
   const [mobileView, setMobileView] = useState(false);
 
   const openMobileNavbar = () => setMobileNavbar(!mobileNavbar);
+
+  const [language, setLanguage] = useState("english"); // State variable for language selection
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false); // State variable for dropdown visibility
+
+  // Event handler for language change
+  const handleLanguageChange = (event) => {
+    const selectedLanguage = event.target.value;
+    setLanguage(selectedLanguage);
+    localStorage.setItem("selectedLanguage", selectedLanguage); // Update local storage
+    console.log("Selected Language:", selectedLanguage);
+    // Reload the page
+    window.location.reload();
+  };
+  // Synchronize state with the value from local storage on component mount
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    setLanguage(storedLanguage || "english");
+  }, []);
+
+  // Event handler for toggling language dropdown
+  const toggleLanguageDropdown = () => {
+    setLanguageDropdownOpen(!languageDropdownOpen);
+  };
 
   useEffect(() => {
     // A function that sets the display state for the DefaultNavbarMobile.
@@ -65,10 +91,10 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
     return () => window.removeEventListener("resize", displayMobileNavbar);
   }, []);
 
-  const renderNavbarItems = routes.map(({ name, icon, href, route, collapse }) => (
+  const renderNavbarItems = routes.map(({ name, arabicName, icon, href, route, collapse }) => (
     <DefaultNavbarDropdown
       key={name}
-      name={name}
+      name={language === "english" ? name : arabicName}
       icon={icon}
       href={href}
       route={route}
@@ -151,7 +177,7 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
                           },
                         })}
                       >
-                        {item.name}
+                        {col.name}
                       </MKTypography>
                     ))}
                   </Fragment>
@@ -195,7 +221,7 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
             key={item.name}
             {...(item.route ? routeComponent : linkComponent)}
             display="flex"
-            justifyContent="space-between"
+            justifyContent={language === "english" ? "space-between" : "flex-end"}
             alignItems="center"
             variant="button"
             textTransform="capitalize"
@@ -233,7 +259,7 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
           >
             {item.description ? (
               <MKBox>
-                {item.name}
+                {language === "english" ? item.name : item.arabicName}
                 <MKTypography
                   display="block"
                   variant="button"
@@ -241,7 +267,7 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
                   fontWeight="regular"
                   sx={{ transition: "all 300ms linear" }}
                 >
-                  {item.description}
+                  {language === "english" ? item.description : item.arabicDescription}
                 </MKTypography>
               </MKBox>
             ) : (
@@ -457,6 +483,7 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
             <MKAvatar src={bgLogoEn} alt="logo" size="lg" shadow="xl" />
           </MKBox>
           <MKBox
+            display="none"
             component={Link}
             to="/"
             lineHeight={1}
@@ -470,10 +497,39 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
           <MKBox
             color="inherit"
             display={{ xs: "none", lg: "flex" }}
+            alignItems="center"
             ml="auto"
             mr={center ? "auto" : 0}
           >
             {renderNavbarItems}
+            <FormControl sx={{ marginRight: "10px" }}>
+              <Select
+                value={language}
+                onChange={handleLanguageChange}
+                open={languageDropdownOpen}
+                onClose={toggleLanguageDropdown}
+                onOpen={toggleLanguageDropdown}
+                sx={{
+                  backgroundColor: "#ffe5a6",
+                  borderRadius: "20px",
+                  padding: "5px",
+                  fontSize: "16px",
+                }}
+              >
+                <MenuItem
+                  value="english"
+                  style={{ backgroundColor: language === "english" ? "#ac8a33" : "inherit" }}
+                >
+                  En
+                </MenuItem>
+                <MenuItem
+                  value="arabic"
+                  style={{ backgroundColor: language === "arabic" ? "#ac8a33" : "inherit" }}
+                >
+                  Ar
+                </MenuItem>
+              </Select>
+            </FormControl>
           </MKBox>
 
           <MKBox

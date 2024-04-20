@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import InputAdornment from "@mui/material/InputAdornment";

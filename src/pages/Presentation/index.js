@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import "@coreui/coreui/dist/css/coreui.min.css";
 
 import Container from "@mui/material/Container";
@@ -15,8 +16,7 @@ import FilledInfoCard from "examples/Cards/InfoCards/FilledInfoCard";
 import Counters from "pages/Presentation/sections/Counters";
 import Information from "pages/Presentation/sections/Information";
 import DesignBlocks from "pages/Presentation/sections/DesignBlocks";
-// import Pages from "pages/Presentation/sections/Pages";
-import Testimonials from "pages/Presentation/sections/Testimonials";
+// import Testimonials from "pages/Presentation/sections/Testimonials";
 import Download from "pages/Presentation/sections/Download";
 import ScrollTopButton from "pages/LandingPages/ProductsList/ScrollTopButton";
 
@@ -29,6 +29,18 @@ import bgImage from "assets/images/bg-presentation.jpg";
 import bgPage from "assets/images/bg-page.jpg";
 
 function Presentation() {
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Selected language from local storage:", selectedLanguage);
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
+
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
@@ -61,7 +73,7 @@ function Presentation() {
                 },
               })}
             >
-              Sorouh Chemicals Co.
+              {selectedLanguage === "english" ? "Sorouh Chemicals Co." : "شركة صروح للكيماويات"}
             </MKTypography>
             <MKTypography
               variant="body1"
@@ -71,7 +83,9 @@ function Presentation() {
               px={{ xs: 6, lg: 12 }}
               mt={1}
             >
-              Solutions for construction and renovation
+              {selectedLanguage === "english"
+                ? "Solutions for construction and renovation"
+                : "حلول للبناء والتجديد"}
             </MKTypography>
           </Grid>
         </Container>
@@ -91,9 +105,6 @@ function Presentation() {
         <Counters />
         <Information />
         <DesignBlocks />
-        {/* <Container sx={{ mt: 6 }}>
-          <BuiltByDevelopers />
-        </Container> */}
         <Container>
           <Grid container spacing={3}>
             <Grid item xs={12} lg={4}>
@@ -101,12 +112,16 @@ function Presentation() {
                 variant="contained"
                 color="gold"
                 icon="store"
-                title="Products"
-                description="Check the possible ways of working with our product."
+                title={selectedLanguage === "english" ? "Products" : "المنتجات"}
+                description={
+                  selectedLanguage === "english"
+                    ? "Take pleasure in discovering our large and diverse collection of products"
+                    : "استمتع باكتشاف مجموعتنا الكبيرة والمتنوعة من المنتجات"
+                }
                 action={{
                   type: "internal",
                   route: "/pages/landing-pages/products-list",
-                  label: "Discover more",
+                  label: selectedLanguage === "english" ? "Discover more" : "اكتشف المزيد",
                 }}
               />
             </Grid>
@@ -115,12 +130,16 @@ function Presentation() {
                 variant="contained"
                 color="gold"
                 icon="info"
-                title="About us"
-                description="Read our story from the  beginning to the crafting of our ideas."
+                title={selectedLanguage === "english" ? "About us" : "عن صروح"}
+                description={
+                  selectedLanguage === "english"
+                    ? "Read our captivating story from the very beginning to the meticulous crafting of our innovative ideas"
+                    : "اقرأ قصتنا منذ البداية وحتى الصياغة الدقيقة لأفكارنا المبتكرة"
+                }
                 action={{
                   type: "internal",
                   route: "/pages/landing-pages/about-us",
-                  label: "Read more",
+                  label: selectedLanguage === "english" ? "Read more" : "اقرأ المزيد",
                 }}
               />
             </Grid>
@@ -129,18 +148,21 @@ function Presentation() {
                 variant="contained"
                 color="gold"
                 icon="email"
-                title="Contact us"
-                description="Feel free to contact us, discuss or get the most frequent answers."
+                title={selectedLanguage === "english" ? "Contact us" : "اتصل بنا"}
+                description={
+                  selectedLanguage === "english"
+                    ? "Feel free to contact us, discuss with us, or access the most frequent answers"
+                    : "لا تتردد في الاتصال بنا أو المناقشة معنا أو الحصول على الإجابات الأكثر شيوعًا"
+                }
                 action={{
                   type: "internal",
                   route: "/pages/landing-pages/contact-us",
-                  label: "Contact us",
+                  label: selectedLanguage === "english" ? "Contact us" : "اتصل بنا",
                 }}
               />
             </Grid>
           </Grid>
         </Container>
-        <Testimonials />
         <Download />
       </Card>
       <ScrollTopButton />

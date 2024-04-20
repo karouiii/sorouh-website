@@ -1,4 +1,3 @@
-// @mui material components
 import Card from "@mui/material/Card";
 
 import MKBox from "components/MKBox";
@@ -16,11 +15,12 @@ import routes from "routes";
 
 // Images
 import bgImage from "assets/images/city-profile.jpg";
+// transparent light
 
 function Author() {
   return (
     <>
-      <DefaultNavbar routes={routes} transparent light />
+      <DefaultNavbar routes={routes} sticky />
       <MKBox bgColor="white">
         <MKBox
           minHeight="25rem"

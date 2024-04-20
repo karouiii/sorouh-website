@@ -60,11 +60,18 @@ function DefaultNavbarDropdown({
           {icon}
         </MKTypography>
         <MKTypography
-          variant="button"
-          fontWeight="regular"
+          variant="h6"
+          fontWeight="bold"
           textTransform="capitalize"
-          color={light ? "white" : "dark"}
-          sx={{ fontWeight: "100%", ml: 1, mr: 0.25 }}
+          color={light ? "white" : "black"}
+          sx={{
+            fontWeight: "100%",
+            ml: 1,
+            mr: 0.25,
+            "&:hover": {
+              transform: "perspective(999px) rotateX(7deg) translate3d(0px, -1px, 5px)",
+            },
+          }}
         >
           {name}
         </MKTypography>

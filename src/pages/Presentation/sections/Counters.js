@@ -1,5 +1,5 @@
-// @mui material components
 import Container from "@mui/material/Container";
+import { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import Divider from "@mui/material/Divider";
 
@@ -8,6 +8,18 @@ import MKBox from "components/MKBox";
 import DefaultCounterCard from "examples/Cards/CounterCards/DefaultCounterCard";
 
 function Counters() {
+  // get language from local storage
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
+
   return (
     <MKBox component="section" py={3}>
       <Container>
@@ -17,7 +29,7 @@ function Counters() {
               count={70}
               color="gold"
               // suffix="+"
-              title="Clients"
+              title={selectedLanguage === "english" ? "Clients" : "زبائن"}
               // description="From buttons, to inputs, navbars, alerts or cards, you are covered"
             />
           </Grid>
@@ -27,7 +39,7 @@ function Counters() {
               count={15}
               // suffix="+"
               color="gold"
-              title="Countries"
+              title={selectedLanguage === "english" ? "Cities" : "مدن"}
               // description="Mix the sections, change the colors and unleash your creativity"
             />
             <Divider orientation="vertical" sx={{ display: { xs: "none", md: "block" }, ml: 0 }} />
@@ -37,7 +49,7 @@ function Counters() {
               color="gold"
               count={100}
               suffix="+"
-              title="Products"
+              title={selectedLanguage === "english" ? "Products" : "منتجات"}
               // description="Save 3-4 weeks of work when you use our pre-made pages for your website"
             />
           </Grid>

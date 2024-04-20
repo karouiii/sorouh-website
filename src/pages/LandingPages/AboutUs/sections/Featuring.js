@@ -1,4 +1,3 @@
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
@@ -44,7 +43,7 @@ function Featuring() {
               suffix="/7"
               title="Support"
               color="gold"
-              description="Actively engage team members that finishes on time"
+              description="Get expert advice whenever you need it"
             />
           </Grid>
         </Grid>

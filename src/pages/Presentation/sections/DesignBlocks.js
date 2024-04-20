@@ -1,8 +1,7 @@
 // react-router-dom components
 import { Link } from "react-router-dom";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
-// @mui material components
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 
@@ -16,11 +15,24 @@ import ExampleCard from "pages/Presentation/components/ExampleCard";
 
 // Data
 import data from "pages/Presentation/sections/data/designBlocksData";
-import bgLogoAr from "assets/images/logo-sorouh-ar.jpg";
+// import bgLogoAr from "assets/images/logo-sorouh-ar.jpg";
 
 function DesignBlocks() {
+  // get language from local storage
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
   const [selectedTitle, setSelectedTitle] = useState(null);
   const selectedTitleRef = useRef(null);
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Selected language from local storage:", selectedLanguage);
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
 
   const handleTitleClick = (title) => {
     setSelectedTitle(selectedTitle === title ? null : title);
@@ -33,7 +45,7 @@ function DesignBlocks() {
     }
   };
 
-  const renderData = data.map(({ title, description, items }) => (
+  const renderData = data.map(({ title, arTitle, description, arDescription, items }) => (
     <Grid
       container
       spacing={3}
@@ -53,33 +65,58 @@ function DesignBlocks() {
       >
         <MKBox
           position="sticky"
+          display="flex"
+          justifyContent={selectedLanguage === "arabic" ? "flex-end" : "flex-start"}
           top="100px"
           pb={{ xs: 2, lg: 6 }}
           border="2px solid #a37913"
           borderRadius="xl"
           px={3}
           pt={3.5}
-          bgColor="white"
-          sx={{
-            backgroundImage: ({ functions: { linearGradient, rgba }, palette: { gradients } }) =>
-              `${linearGradient(
-                rgba(gradients.dark.main, 0.1),
-                rgba(gradients.dark.state, 0.1)
-              )}, url(${bgLogoAr})`,
-            backgroundSize: "contain",
-            backgroundPosition: "right",
-            backgroundRepeat: "no-repeat",
-          }}
+          bgColor="#ececec"
         >
           <MKTypography
-            fontSize={{ xs: 12, lg: 20 }}
-            variant="h6"
+            fontSize={{ xs: 16, lg: 24 }}
+            variant="h3"
             fontWeight="bold"
-            // mb={1}
-            mr={10}
-            sx={{ color: "#a37913" }}
+            textDecoration="none"
+            overflow="hidden"
+            transition="transform 0.2s ease-in-out"
+            willChange="transform"
+            zIndex={0}
+            sx={{
+              color: "#a37913",
+              ml: 1,
+              mr: 0.25,
+              position: "relative", // Ensure position relative for absolute positioning of pseudo-element
+              "&::after": {
+                backgroundColor: "#a99e8f",
+                borderRadius: "3rem",
+                content: "''",
+                display: "block",
+                height: "10%",
+                width: "100%",
+                position: "absolute",
+                left: 0,
+                bottom: 0,
+                transform: "rotate(10deg)",
+                transformOrigin: "top left",
+                transition: "transform 0.2s ease-out",
+                willChange: "transform",
+                zIndex: -1,
+              },
+              "&:hover::after": {
+                transform: "translate(0, -50%)",
+              },
+              "&:hover": {
+                border: "2px solid transparent",
+                color: "black",
+                transform: "scale(1.05)",
+                willChange: "transform",
+              },
+            }}
           >
-            {title}
+            {selectedLanguage === "english" ? title : arTitle}
           </MKTypography>
         </MKBox>
       </Grid>
@@ -93,7 +130,7 @@ function DesignBlocks() {
             pr={2}
             sx={{ textAlign: "center" }}
           >
-            {description}
+            {selectedLanguage === "english" ? description : arDescription}
           </MKTypography>
           <Grid container spacing={3}>
             {items.slice(0, 4).map(({ image, name, itemDescription, count, route, pro }) => (
@@ -127,11 +164,15 @@ function DesignBlocks() {
           alignItems="center"
           sx={{ textAlign: "center", my: 6, mx: "auto", px: 0.75 }}
         >
-          <MKTypography variant="h2" fontWeight="bold">
-            Huge collection of products
+          <MKTypography variant="h2" fontWeight="bold" color="black">
+            {selectedLanguage === "english"
+              ? "Huge collection of products"
+              : "مجموعة كبيرة من المنتجات"}
           </MKTypography>
-          <MKTypography variant="body1" color="text">
-            We have arranged for you this rich catalogue
+          <MKTypography variant="body1" color="black">
+            {selectedLanguage === "english"
+              ? "We have arranged for you this rich catalogue"
+              : "لقد أعددنا لك هذا الكتالوج الغني"}
           </MKTypography>
         </Grid>
       </Container>
