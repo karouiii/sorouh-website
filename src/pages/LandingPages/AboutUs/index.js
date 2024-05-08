@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -22,6 +23,18 @@ import centeredFooterRoutes from "centeredFooter.routes";
 // Images
 import bgImage from "assets/images/bg1.jpg";
 function AboutUs() {
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    localStorage.getItem("selectedLanguage") || "english"
+  );
+
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Selected language from local storage:", selectedLanguage);
+    if (storedLanguage) {
+      setSelectedLanguage(storedLanguage);
+    }
+  }, []);
+
   return (
     <>
       <DefaultNavbar routes={routes} sticky />
@@ -60,13 +73,15 @@ function AboutUs() {
                 },
               })}
             >
-              About Us
+              {selectedLanguage === "english" ? "About Us" : "عن صروح"}
             </MKTypography>
             <MKTypography variant="body1" color="white" opacity={0.8} mt={1} mb={3}>
-              We provide fast solutions and unique technologies in high quality.
+              {selectedLanguage === "english"
+                ? "We provide fast solutions and unique technologies in high quality"
+                : "نحن نقدم حلول سريعة وتقنيات فريدة ذات جودة عالية"}
             </MKTypography>
-            <MKTypography variant="h6" color="white" mt={8} mb={1}>
-              Find us on
+            <MKTypography variant="body1" color="white" mt={8} mb={1}>
+              {selectedLanguage === "english" ? "Find us on" : "تجدنا على"}
             </MKTypography>
             <MKBox display="flex" justifyContent="center" alignItems="center">
               <MKTypography
@@ -74,19 +89,9 @@ function AboutUs() {
                 variant="body1"
                 color="white"
                 href="https://www.facebook.com/sorouh.chimecals"
-                // mr={3}
               >
                 <i className="fab fa-facebook" />
               </MKTypography>
-              {/* <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-instagram" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#" mr={3}>
-                <i className="fab fa-twitter" />
-              </MKTypography>
-              <MKTypography component="a" variant="body1" color="white" href="#">
-                <i className="fab fa-google-plus" />
-              </MKTypography> */}
             </MKBox>
           </Grid>
         </Container>
@@ -112,22 +117,19 @@ function AboutUs() {
         >
           <MKTypography
             variant="h1"
-            color="text"
+            color="gold"
             sx={({ breakpoints, typography: { size } }) => ({
               [breakpoints.down("md")]: {
                 fontSize: size["3xl"],
               },
             })}
           >
-            About Us
+            {selectedLanguage === "english" ? "About Us" : "عن صروح"}
           </MKTypography>
-          <MKTypography variant="body1" color="text" opacity={0.8} mt={1} mb={3}>
-            Sorouh Chemicals Co. was established by a group of specialized engineers with long
-            experience in materials science as their expertise in the field of chemicals exceeds
-            twenty years. Sorouh Chemicals Co. is specialized in petrochemicals, oil and gas,
-            construction and most industrial fields. We also take pride in cooperating with the best
-            globally specialized companies to provide high quality professional solutions by an
-            integrated teams and consultants, engineers and technical staff.
+          <MKTypography variant="body1" color="black" opacity={0.8} mt={1} mb={3}>
+            {selectedLanguage === "english"
+              ? "Sorouh Chemicals Co. was established by a group of specialized engineers with long experience in materials science as their expertise in the field of chemicals exceeds twenty years. Sorouh Chemicals Co. is specialized in petrochemicals, oil and gas, construction and most industrial fields. We also take pride in cooperating with the best globally specialized companies to provide high quality professional solutions by an integrated teams and consultants, engineers and technical staff."
+              : "تأسست شركة صروح للكيماويات على يد مجموعة من المهندسين المتخصصين ذوي الخبرة الطويلة في علم المواد حيث أن خبرتهم في مجال المواد الكيميائية تتجاوز العشرين عاماً. شركة صروح للكيماويات متخصصة في البتروكيماويات والنفط والغاز والبناء ومعظم المجالات الصناعية. كما نفخر بالتعاون مع أفضل الشركات العالمية المتخصصة لتقديم حلول احترافية عالية الجودة من خلال فرق عمل متكاملة واستشاريين ومهندسين وطاقم فني"}
           </MKTypography>
         </Grid>
         <Container py={12}>

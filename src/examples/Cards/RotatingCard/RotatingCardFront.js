@@ -42,13 +42,13 @@ function RotatingCardFront({ color, image, icon, title, description }) {
         height: selectedLanguage === "english" ? "350px" : "280px",
       }}
     >
-      <MKBox py={5} px={3} textAlign="center" lineHeight={1}>
+      <MKBox py={5} px={3} textAlign="justify" lineHeight={1}>
         {icon && (
           <MKTypography variant="h2" color="white" my={2}>
             {typeof icon === "string" ? <Icon>{icon}</Icon> : icon}
           </MKTypography>
         )}
-        <MKTypography variant="h4" color="white" gutterBottom>
+        <MKTypography variant="h5" color="white" gutterBottom>
           {title}
         </MKTypography>
         <MKTypography

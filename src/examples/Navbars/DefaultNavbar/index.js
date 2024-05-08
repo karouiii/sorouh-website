@@ -11,7 +11,6 @@ import Icon from "@mui/material/Icon";
 import Popper from "@mui/material/Popper";
 import Grow from "@mui/material/Grow";
 import Grid from "@mui/material/Grid";
-import Divider from "@mui/material/Divider";
 import MuiLink from "@mui/material/Link";
 
 import MKBox from "components/MKBox";
@@ -27,6 +26,7 @@ import breakpoints from "assets/theme/base/breakpoints";
 import bgLogoEn from "assets/images/logo-sorouh-nbg.png";
 
 import MenuItem from "@mui/material/MenuItem";
+import Divider from "@mui/material/Divider";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 
@@ -518,15 +518,22 @@ function DefaultNavbar({ brand, routes, transparent, light, sticky, relative, ce
               >
                 <MenuItem
                   value="english"
-                  style={{ backgroundColor: language === "english" ? "#ac8a33" : "inherit" }}
+                  style={{
+                    backgroundColor: language === "english" ? "#ac8a33" : "inherit",
+                    color: "black",
+                  }}
                 >
-                  En
+                  {language === "english" ? "English" : "الإنجليزية"}
                 </MenuItem>
+                <Divider variant="middle" />
                 <MenuItem
                   value="arabic"
-                  style={{ backgroundColor: language === "arabic" ? "#ac8a33" : "inherit" }}
+                  style={{
+                    backgroundColor: language === "arabic" ? "#ac8a33" : "inherit",
+                    color: "black",
+                  }}
                 >
-                  Ar
+                  {language === "english" ? "Arabic" : "العربية"}
                 </MenuItem>
               </Select>
             </FormControl>

@@ -20,9 +20,6 @@ import DefaultNavbarDropdown from "examples/Navbars/DefaultNavbar/DefaultNavbarD
 
 function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState(
-    localStorage.getItem("selectedLanguage") || "english"
-  );
 
   const handleSetCollapse = (name) => (collapse === name ? setCollapse(false) : setCollapse(name));
 
@@ -31,7 +28,11 @@ function DefaultNavbarMobile({ routes, open }) {
 
   // Event handler for language change
   const handleLanguageChange = (event) => {
-    setLanguage(event.target.value);
+    const selectedLanguage = event.target.value;
+    setLanguage(selectedLanguage);
+    localStorage.setItem("selectedLanguage", selectedLanguage);
+    console.log("Selected Language:", selectedLanguage);
+    window.location.reload();
   };
 
   // Event handler for toggling language dropdown
@@ -40,9 +41,9 @@ function DefaultNavbarMobile({ routes, open }) {
   };
   useEffect(() => {
     const storedLanguage = localStorage.getItem("selectedLanguage");
-    console.log("Selected language from local storage:", selectedLanguage);
+    console.log("Selected language from local storage:", storedLanguage);
     if (storedLanguage) {
-      setSelectedLanguage(storedLanguage);
+      setLanguage(storedLanguage);
     }
   }, []);
 
@@ -50,7 +51,7 @@ function DefaultNavbarMobile({ routes, open }) {
     ({ name, arabicName, icon, collapse: routeCollapses, href, route, collapse: navCollapse }) => (
       <DefaultNavbarDropdown
         key={name}
-        name={selectedLanguage === "english" ? name : arabicName}
+        name={language === "english" ? name : arabicName}
         icon={icon}
         collapseStatus={name === collapse}
         onClick={() => handleSetCollapse(name)}
@@ -72,7 +73,7 @@ function DefaultNavbarMobile({ routes, open }) {
                       py={1}
                       px={0.5}
                     >
-                      {selectedLanguage === "english" ? item.name : item.arabicName}
+                      {language === "english" ? item.name : item.arabicName}
                       {item.name}
                     </MKTypography>
                     {item.collapse.map((el) => (
@@ -164,7 +165,7 @@ function DefaultNavbarMobile({ routes, open }) {
       timeout="auto"
       unmountOnExit
       sx={{
-        textAlign: selectedLanguage === "arabic" ? "right" : "inherit",
+        textAlign: language === "arabic" ? "right" : "inherit",
       }}
     >
       <MKBox
@@ -173,13 +174,13 @@ function DefaultNavbarMobile({ routes, open }) {
         ml={-2}
         display="flex"
         flexDirection="column"
-        alignItems="flex-end"
+        alignItems={language === "arabic" ? "flex-end" : "flex-start"}
       >
         {renderNavbarItems}
       </MKBox>
       <FormControl
         sx={{
-          paddingRight: selectedLanguage === "arabic" ? 2 : 0,
+          paddingRight: language === "arabic" ? 2 : 0,
         }}
       >
         <Select
@@ -188,9 +189,31 @@ function DefaultNavbarMobile({ routes, open }) {
           open={languageDropdownOpen}
           onClose={toggleLanguageDropdown}
           onOpen={toggleLanguageDropdown}
+          sx={{
+            backgroundColor: "#ffe5a6",
+            borderRadius: "20px",
+            padding: "5px",
+            fontSize: "16px",
+          }}
         >
-          <MenuItem value="english">En</MenuItem>
-          <MenuItem value="arabic">Ar</MenuItem>
+          <MenuItem
+            value="english"
+            style={{
+              backgroundColor: language === "english" ? "#ac8a33" : "inherit",
+              color: "black",
+            }}
+          >
+            {language === "english" ? "English" : "الإنجليزية"}
+          </MenuItem>
+          <MenuItem
+            value="arabic"
+            style={{
+              backgroundColor: language === "arabic" ? "#ac8a33" : "inherit",
+              color: "black",
+            }}
+          >
+            {language === "english" ? "Arabic" : "العربية"}
+          </MenuItem>
         </Select>
       </FormControl>
     </Collapse>

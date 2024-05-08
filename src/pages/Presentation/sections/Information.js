@@ -48,7 +48,7 @@ function Information() {
                 title={selectedLanguage === "english" ? "Our vision" : "رؤيتنا"}
                 description={
                   selectedLanguage === "english"
-                    ? "We provide fast solutions and unique technologies in high quality. We strive continually to search and develop and find new ways to enable us to fulfill all the needs of our clients based on local and international standards using latest technologies and applications without affecting the safety and quality standards."
+                    ? "We offer rapid, high-quality solutions and innovative technologies, constantly seeking new ways to meet our clients' needs using the latest technology and adhering to safety and quality standards"
                     : "نحن نقدم حلول سريعة وتقنيات فريدة ذات جودة عالية. نسعى باستمرار للبحث والتطوير وإيجاد طرق جديدة تمكننا من تلبية جميع احتياجات عملائنا بناءً على المعايير المحلية والعالمية باستخدام أحدث التقنيات والتطبيقات دون التأثير على معايير السلامة والجودة"
                 }
               />
